@@ -1,3 +1,8 @@
+- [ ] Task 1
+- [ ] Task 2
+- [ ] Task 3
+
+
 ## Disclaimer:
 
 Please refer to the [README.md](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide#disclaimer) file for the full disclaimer related to this guide.
