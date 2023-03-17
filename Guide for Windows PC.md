@@ -33,6 +33,61 @@ Please refer to the [README.md](https://github.com/MoonBoi9001/Avalanche-node-qu
 #### Open the file that says id_rsa.pub in notepad and then minimise notepad, you will come back to it later, you can close the file directoy explorer now.
 
 
+## Prerequisites
+
+- A reliable internet connection.
+- A minimum of 2,000 AVAX tokens for staking (accurate at the time of writing; subject to change).
+- Basic understanding of command-line interfaces.
+
+### 1. Download and Install CMDER
+
+Download and install the latest full version of CMDER, a Linux terminal emulator for Windows that allows you to log into your server: https://cmder.app/
+
+### 2. Create a GitHub Account
+
+Create an account on GitHub if you don't already have one: https://github.com/signup?source=login
+
+### 3. Generate an SSH Keypair
+
+Generate a new SSH keypair to securely log into your server. If you already have a keypair on your PC, you can skip this step.
+
+#### 3.1 Check for Existing Keypair
+
+Go to the following directory on your Windows PC:
+C:/Users/{your_username}/.ssh
+If you see files named `id_rsa` and `id_rsa.pub`, you already have a keypair that you can use.
+
+#### 3.2 Create a New SSH Keypair
+
+If you don't have any files or the `.ssh` directory doesn't exist, follow these steps:
+
+1. Create a suitable folder (e.g., `hetzner_germany_avax_server_AX41-NVME`) in this directory: `C:/Users/{your_username}/.ssh` for saving your SSH keys inside.
+2. Open the newly created folder.
+3. Launch Command Prompt by typing `cmd` into Windows search and pressing Enter. This will launch a terminal window.
+4. Type `ssh-keygen` into the terminal window.
+5. Enter a file to save your SSH keypair, e.g., `C:/Users/{your_username}/.ssh/{your_folder_name}/id_rsa`
+6. Enter a secure passphrase to encrypt your SSH key on your Windows device. It should be at least 12 characters long, combining uppercase and lowercase letters, numbers, and special characters. You MUST remember this!
+7. Confirm that the newly created keypair is saved into the new folder you created previously.
+8. Go to the following directory on your Windows PC: `C:/Users/{your_username}/.ssh/{your_folder_name}`
+9. Copy the file named `id_rsa` (not the one that says `id_rsa.pub`).
+10. Go to the following directory on your Windows PC: `C:/Users/{your_username}/.ssh`
+11. Paste a copy of your `id_rsa` file into this directory.
+12. Go back to the following directory on your Windows PC: `C:/Users/{your_username}/.ssh/{your_folder_name}`
+13. Open the file named `id_rsa.pub` in Notepad and then minimize Notepad. You will come back to it later. You can close the File Explorer now.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```python
 
 ```
