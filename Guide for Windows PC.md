@@ -2,10 +2,6 @@
 
 Please refer to the [README.md](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide#disclaimer) file for the full disclaimer related to this guide.
 
-```python
-
-```
-
 # Prerequisites
 
 #### A reliable internet connection.
