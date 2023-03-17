@@ -63,23 +63,14 @@ Click "Order" to proceed to the checkout page. On the checkout page, you will ha
 
 Save and complete your order. You may have to wait up to a few hours until the server is available.
 
+## Logging into your new server.
 
-#### When configured you will get an email, you can check the configuration at: https://robot.hetzner.com/server
-#### Copy your new AX41-NVME servers IP, if it doesn't show up, it's probably not configured yet, this can take a few hours.
-#### Launch cmder then type:
+When you server has finished being configured you should see it show up for example `AX41-NVMe #1871660` in the `Server ID` section of: https://robot.hetzner.com/server
+Click on your Server's ID and then copy the IP address. You can make note of the IP somewhere for future refrence or otherwise you can always find it with the link provided above. 
+Launch Cmder.exe then type `ssh root@{IP}`. Make sure to replace `{IP}` with the IP address of your server that you copied from the link above.
+Your Linux terminal emulator will now connect to your server and prompt you to trust the key fingerprint, you will only be asked this once, at the initial setup. Type `yes` and then enter your secure passphrase for your SSH keypair.
 
-# ssh root@{ip}
-
-#### Make sure to replace "{ip}" with the AX41-NVME ip address you copied from the link above.
-#### Type yes to trust your new servers key fingerprint.
-#### When prompted to enter passphrase for your ssh keypair enter the passphrase you setup earlier when you generated the ssh keypair.
-
-
-```python
-
-```
-
-# Congrats you are now logged into your new server and ready to beging configuring it to validate the Avalanche network
+## Beginning configuration of your server.
 
 #### Type the following into your server 1 by 1:
 
