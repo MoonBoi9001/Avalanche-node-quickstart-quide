@@ -2,37 +2,6 @@
 
 Please refer to the [README.md](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide#disclaimer) file for the full disclaimer related to this guide.
 
-# Prerequisites
-
-#### A reliable internet connection.
-#### A minimum of 2,000 AVAX tokens for staking. (Accurate at time of writing, may be subject to change)
-#### Basic understanding of command-line interfaces.
-
-#### 1. Download & install the latest full version of CMDER (a Linux terminal emulator for Windows that allows you to log into your server): https://cmder.app/
-
-#### 2. Create an account on GitHub: https://github.com/signup?source=login
-
-#### 3. Generate a new SSH keypair to log securely into your server with, if you do not already have a SSH keypair on your PC.
-#### To check if you already have one, go to the following directory on your windows pc
-#### C:/Users/{enter your username here}/.ssh
-#### If you see a file that says id_rsa and a seperate file that says id_rsa.pub then you alread have a keypair that you can use.
-#### If you don't have any files or the .ssh directory doesn't exist then you will have to make a keypair, follow the steps below:
-#### Create a suitable folder e.g "hetzner_germany_avax_server_AX41-NVME" in this directoy  C:/Users/{enter your username here}/.ssh for saving your ssh keys inside.
-#### Open the newly created folder.
-#### Launch command prompt by typing cmd into windows search and pressing enter, this will launch a terminal window.
-#### Type "ssh-keygen" into the terminal window.
-#### Enter a file to save your ssh keypair e.g C:/Users/{enter your username here}/.ssh/{enter your folder name here}/id_rsa
-#### Enter a SECURE key passphrase which will keep your SSH key encrypted on your windows device, you NEED to remember this!
-#### Confirm that the newly created keypair is saved into the new folder you created previously.
-#### Copy the file that says id_rsa (not the one that says id_rsa.pub).
-#### Go to the following directory on your windows pc:
-#### C:/Users/{enter your username here}/.ssh
-#### Paste a copy of your file id_rsa into this directory.
-#### Go to the following directory on your windows pc.
-#### C:/Users/{enter your username here}/.ssh/{enter your folder name here}
-#### Open the file that says id_rsa.pub in notepad and then minimise notepad, you will come back to it later, you can close the file directoy explorer now.
-
-
 ## Prerequisites
 
 - A reliable internet connection.
