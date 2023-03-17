@@ -62,12 +62,6 @@ Click "Order" to proceed to the checkout page. On the checkout page, you will ha
 Save and complete your order. You may have to wait up to a few hours until the server is available.
 
 
-
-
-Click order, which will take you to the checkout page, on the checkout page you will see you can specify to login to your server with password or public key. You will use public key. If you followed the earlier part of my guide then your notepad is open already and you can copy your public key. Paste your public key into the key data field and then save and complete your order. If you are not sure where to find your public key then go to the following directory C:/Users/{enter your username here}/.ssh and find the file that says id_rsa.pub. 
-You will have to wait up to a few hours untill the server is available.
-
-
 #### When configured you will get an email, you can check the configuration at: https://robot.hetzner.com/server
 #### Copy your new AX41-NVME servers IP, if it doesn't show up, it's probably not configured yet, this can take a few hours.
 #### Launch cmder then type:
