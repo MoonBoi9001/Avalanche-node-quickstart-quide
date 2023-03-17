@@ -10,7 +10,7 @@ Please refer to the [README.md](https://github.com/MoonBoi9001/Avalanche-node-qu
 
 ### 1. Download and Install CMDER
 
-Download and install the latest full version of CMDER, a Linux terminal emulator for Windows that allows you to log into your server: https://cmder.app/
+Download and install the latest full version of CMDER, a Linux terminal emulator for Windows, which enables you to log into your server: https://cmder.app/  
 
 ### 2. Create a GitHub Account
 
@@ -35,46 +35,25 @@ If you don't have any files or the `.ssh` directory doesn't exist, follow these 
 3. Launch Command Prompt by typing `cmd` into Windows search and pressing Enter. This will launch a terminal window.
 4. Type `ssh-keygen` into the terminal window.
 5. Enter a file to save your SSH keypair, e.g., `C:/Users/{your_username}/.ssh/{your_folder_name}/id_rsa`
-6. Enter a secure passphrase to encrypt your SSH key on your Windows device. It should be at least 12 characters long, combining uppercase and lowercase letters, numbers, and special characters. You MUST remember this!
+6. Enter a secure passphrase to encrypt your SSH key on your Windows device. Choose a passphrase that is at least 12 characters long, with a mix of uppercase and lowercase letters, numbers, and special characters. This passphrase is crucial to protect your SSH key, and you MUST remember it!
 7. Confirm that the newly created keypair is saved into the new folder you created previously.
 8. Go to the following directory on your Windows PC: `C:/Users/{your_username}/.ssh/{your_folder_name}`
 9. Copy the file named `id_rsa` (not the one that says `id_rsa.pub`).
-10. Go to the following directory on your Windows PC: `C:/Users/{your_username}/.ssh`
+10. Navigate to the following directory on your Windows PC: `C:/Users/{your_username}/.ssh`
 11. Paste a copy of your `id_rsa` file into this directory.
-12. Go back to the following directory on your Windows PC: `C:/Users/{your_username}/.ssh/{your_folder_name}`
+12. Go back to the original directory: `C:/Users/{your_username}/.ssh/{your_folder_name}`
 13. Open the file named `id_rsa.pub` in Notepad and then minimize Notepad. You will come back to it later. You can close the File Explorer now.
 
+## Guide starts here if you have completed the prerequsites 
 
+Start by purchasing AX41-NVME on Hetzner in Germany or Finland, be cognizant of 1-off setup fees
+https://www.hetzner.com/dedicated-rootserver/ax41-nvme/configurator#/
+Keep the option Primary IPv4 checked and selected, you will need it
+Select latest version of Ubuntu LTS, in my case, at the time of writing, this is Ubuntu 22.04.1 LTS (base)
+Upgrade to ECC RAM near the bottom of the order page if you want (not needed)
+Click order, which will take you to the checkout page, on the checkout page you will see you can specify to login to your server with password or public key. You will use public key. If you followed the earlier part of my guide then your notepad is open already and you can copy your public key. Paste your public key into the key data field and then save and complete your order. If you are not sure where to find your public key then go to the following directory C:/Users/{enter your username here}/.ssh and find the file that says id_rsa.pub. 
+You will have to wait up to a few hours untill the server is available.
 
-
-
-
-
-
-
-
-
-
-
-
-```python
-
-```
-
-# Guide starts here if you have completed the prerequsites 
-
-#### Start by purchasing AX41-NVME on Hetzner in Germany or Finland, be cognizant of 1-off setup fees
-#### https://www.hetzner.com/dedicated-rootserver/ax41-nvme/configurator#/
-#### Keep the option Primary IPv4 checked and selected, you will need it
-#### Select latest version of Ubuntu LTS, in my case, at the time of writing, this is Ubuntu 22.04.1 LTS (base)
-#### Upgrade to ECC RAM near the bottom of the order page if you want (not needed)
-#### Click order, which will take you to the checkout page, on the checkout page you will see you can specify to login to your server with password or public key. You will use public key. If you followed the earlier part of my guide then your notepad is open already and you can copy your public key. Paste your public key into the key data field and then save and complete your order. If you are not sure where to find your public key then go to the following directory C:/Users/{enter your username here}/.ssh and find the file that says id_rsa.pub. 
-#### You will have to wait up to a few hours untill the server is available.
-
-
-```python
-
-```
 
 #### When configured you will get an email, you can check the configuration at: https://robot.hetzner.com/server
 #### Copy your new AX41-NVME servers IP, if it doesn't show up, it's probably not configured yet, this can take a few hours.
