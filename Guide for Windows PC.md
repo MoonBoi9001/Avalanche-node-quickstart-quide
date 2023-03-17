@@ -51,9 +51,15 @@ If you don't have any files or the `.ssh` directory doesn't exist, follow these 
 Start by purchasing an AX41-NVME server on Hetzner in Germany or Finland, keeping in mind any one-time setup fees: [Hetzner AX41-NVME Configurator](https://www.hetzner.com/dedicated-rootserver/ax41-nvme/configurator#/)
 - Keep the option "Primary IPv4" checked and selected, as you will need it.
 - Select the latest version of Ubuntu LTS (at the time of writing, this is Ubuntu 22.04.1 LTS (base)).
-- Optionally, upgrade to ECC RAM near the bottom of the order page (not required).
+- Optionally consider upgrading to ECC RAM near the bottom of the order page (not required).
 
+#### 2. Complete Your Order
 
+Click "Order" to proceed to the checkout page. On the checkout page, you will have the option to log in to your server using either a password or a public key. Choose the public key option.
+- If you followed the earlier part of this guide, your Notepad with the public key should be open already. Copy your public key and paste it into the "Key Data" field.
+- If you're not sure where to find your public key, go to the following directory: `C:/Users/{your_username}/.ssh` and find the file named `id_rsa.pub`.
+
+Save and complete your order. You may have to wait up to a few hours until the server is available.
 
 
 
