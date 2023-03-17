@@ -44,7 +44,9 @@ If you don't have any files or the `.ssh` directory doesn't exist, follow these 
 12. Go back to the original directory: `C:/Users/{your_username}/.ssh/{your_folder_name}`
 13. Open the file named `id_rsa.pub` in Notepad and then minimize Notepad. You will come back to it later. You can close the File Explorer now.
 
-## Guide starts here if you have completed the prerequsites 
+# Guide starts here if you have completed the prerequsites 
+
+## Registering your server. 
 
 #### 1. Purchase AX41-NVME on Hetzner
 
