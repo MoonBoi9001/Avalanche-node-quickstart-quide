@@ -46,7 +46,7 @@ If you don't have any files or the `.ssh` directory doesn't exist, follow these 
 
 # Guide starts here if you have completed the prerequsites 
 
-## Registering your server. 
+## Registering your server
 
 #### 1. Purchase AX41-NVME on Hetzner
 
