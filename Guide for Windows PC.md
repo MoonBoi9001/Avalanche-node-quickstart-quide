@@ -63,12 +63,20 @@ Click "Order" to proceed to the checkout page. On the checkout page, you will ha
 
 Save and complete your order. You may have to wait up to a few hours until the server is available.
 
-## Logging into your new server.
+## Logging into Your New Server
 
-When you server has finished being configured you should see it show up for example `AX41-NVMe #1871660` in the `Server ID` section of: https://robot.hetzner.com/server
-Click on your Server's ID and then copy the IP address. You can make note of the IP somewhere for future refrence or otherwise you can always find it with the link provided above. 
-Launch Cmder.exe then type `ssh root@{IP}`. Make sure to replace `{IP}` with the IP address of your server that you copied from the link above.
-Your Linux terminal emulator will now connect to your server and prompt you to trust the key fingerprint, you will only be asked this once, at the initial setup. Type `yes` and then enter your secure passphrase for your SSH keypair.
+Once your server has finished being configured, it should appear in the `Server ID` section of the Hetzner Robot dashboard (https://robot.hetzner.com/server). For example, you might see `AX41-NVMe #1871660`.
+
+1. Click on your Server's ID and then copy the IP address. You can make a note of the IP somewhere for future reference, or you can always find it using the link provided above.
+2. Launch `Cmder.exe`, and type `ssh root@{IP}`. Make sure to replace `{IP}` with the IP address of your server that you copied from the link above.
+3. Your Linux terminal emulator will now connect to your server and prompt you to trust the key fingerprint. This will only be asked once, during the initial setup. Type `yes` and press Enter.
+4. Enter your secure passphrase for your SSH keypair when prompted.
+
+
+
+
+
+
 
 ## Beginning configuration of your server.
 
