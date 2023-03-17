@@ -63,7 +63,7 @@ Click "Order" to proceed to the checkout page. On the checkout page, you will ha
 
 Save and complete your order. You may have to wait up to a few hours until the server is available.
 
-## Logging into Your New Server
+## Logging into your server
 
 Once your server has finished being configured, it should appear in the `Server ID` section of the Hetzner Robot dashboard (https://robot.hetzner.com/server). For example, you might see `AX41-NVMe #1871660`.
 
