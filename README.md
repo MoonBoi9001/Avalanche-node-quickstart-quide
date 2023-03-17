@@ -5,4 +5,4 @@ Consider donating some AVAX (feel free to send me literally anything) if this gu
 
 Open the file "Guide for Windows PC.ipynb" for the full walkthrough. Enjoy!
 
-This guide covers topics from the Prerequisites to get started, to configuring your validator on Avalanche network, saving and restoring your staking keys (important!) and monitoring/updating your node. 
+This guide covers topics from the prerequisites to get started, to configuring your validator on Avalanche network, saving and restoring your staking keys (important!) and monitoring/updating your node. 
