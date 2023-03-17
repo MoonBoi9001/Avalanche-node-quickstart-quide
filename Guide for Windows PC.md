@@ -1,18 +1,12 @@
 # Disclaimer:
 
-#### This guide is provided for educational and informational purposes only. Neither the author nor any associated parties can be held responsible for any losses, damages, or issues that may arise from following the instructions provided. By using this guide, you acknowledge that you are participating in the Avalanche network as a validator entirely at your own risk.
 
-#### Setting up a cryptocurrency staking validator on the Avalanche network involves multiple steps, and the outcome can vary depending on your specific hardware, software, and network configurations. The author cannot guarantee that following this guide will result in a fully functional validator or ensure that you will receive staking rewards.
 
-#### Before proceeding, please make sure you have a thorough understanding of the Avalanche network and the risks associated with cryptocurrency staking. Furthermore, it is essential to stay up-to-date with any changes to the Avalanche network or staking requirements, as these may affect your validator's performance and rewards eligibility.
+## Disclaimer:
 
-#### As a validator, you must understand that maintaining an up-to-date node is critical for continued participation in the Avalanche network and earning staking rewards. You are responsible for keeping your node running with the latest required version of AvalancheGo and ensuring that all necessary packages are updated as needed.
+Please refer to the [README.md](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide#disclaimer) file for the full disclaimer related to this guide.
 
-#### The Avalanche network may introduce new features, security patches, or performance improvements that require an updated version of the software. If you fail to update your node and its dependencies, your validator may become ineligible for staking rewards or face penalties. It is your responsibility to monitor the official Avalanche communication channels and stay informed about any changes or updates that may impact your node's performance and staking eligibility.
 
-#### Terms of Service Compliance: By following this guide, you agree to comply with any applicable terms of service, rules, or regulations associated with the Avalanche network and any relevant third-party services or platforms. The author and any associated parties take no responsibility for issues, losses, or damages that may arise due to violations of any terms of service. It is your responsibility to familiarize yourself with and adhere to these terms while participating in the Avalanche network as a validator.
-
-#### By following this guide, you agree to assume full responsibility for keeping your node updated and acknowledge that neither the author nor any associated parties will be held responsible for any issues that may arise. You also release the author and any associated parties from any liability. If you are uncertain about any steps or require further assistance, please consult the official Avalanche documentation or seek help from the community.
 
 
 ```python
