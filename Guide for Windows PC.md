@@ -20,15 +20,15 @@ Create an account on GitHub if you don't already have one: https://github.com/si
 
 Generate a new SSH keypair to securely log into your server. If you already have a keypair on your PC, you can skip this step.
 
-    - #### 3.1 Check for Existing Keypair
+- #### 3.1 Check for Existing Keypair
 
 Go to the following directory on your Windows PC:
 C:/Users/{your_username}/.ssh
 If you see files named `id_rsa` and `id_rsa.pub`, you already have a keypair that you can use.
 
-    - #### 3.2 Create a New SSH Keypair
+- #### 3.2 Create a New SSH Keypair
 
-    If you don't have any files or the `.ssh` directory doesn't exist, follow these steps:
+If you don't have any files or the `.ssh` directory doesn't exist, follow these steps:
 
 1. Create a suitable folder (e.g., `hetzner_germany_avax_server_AX41-NVME`) in this directory: `C:/Users/{your_username}/.ssh` for saving your SSH keys inside.
 2. Open the newly created folder.
