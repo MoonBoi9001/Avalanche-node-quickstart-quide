@@ -387,35 +387,31 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
     ./avalanchego-installer.sh --reinstall
     ```
         
-Press `2` for cloud provider.
+    Press `2` for cloud provider.
 
-Press `n` if it doesn't show your IP (it didn't for me).
+    Press `n` if it doesn't show your IP (it didn't for me).
 
-Enter your IP that you use to connect to your server.
+    Enter your IP that you use to connect to your server.
 
-Type `private` then type `on` to turn on state sync (unless you NEED the historical data, TIP: most don't).
+    Type `private` then type `on` to turn on state sync (unless you NEED the historical data, TIP: most don't).
+    
+2. Give the prior step a few mins first (suggested 3-5 mins) and then do a health check.
 
-GIVE THIS A FEW MINS FIRST, and then do a health check.
-
-    ```
     curl -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
     "method" :"health.health"
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
-    ```
 
 You can also check uptime:
 
-    ```
     curl -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
     "method" :"info.uptime"
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/info
-    ```
 
-#### Now go back to the node monitoring sites above (AllNodes/VScout are usually the fastest to update in my experience) and check your node has updated to the latest revision
+Now go back to the [node monitoring sites above](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#step-1-how-to-monitor-your-node) (AllNodes/VScout are usually the fastest to update in my experience) and check your node has updated to the latest revision.
 
 
 
