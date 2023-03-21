@@ -5,11 +5,11 @@ This guide is intended to help Windows users set up their Avalanche node on a Li
 ## Table of Contents
 
 1. [Prerequisites](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#prerequisites)
-2. [Setting Up Your Avalanche Node](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#guide-starts-here-if-you-have-completed-the-prerequsites)
-3. [Monitoring and Updating Your Node](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#how-to-update-and-monitor-your-node)
-4. [Saving Your Staking Keys](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#next-you-will-need-to-backup-your-staking-keys-very-important)
-5. [Restoring Your Staking Keys](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#how-to-restore-your-node-id-from-backed-up-staking-keys)
-6. [Getting Started](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide#getting-started)
+2. [Registering your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#registering-your-server)
+3. [Logging into your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#logging-into-your-server)
+4. [Beginning configuration of your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#beginning-configuration-of-your-server)
+5. [Download Go onto your configured server.](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#download-go-onto-your-configured-server)
+6. [Link your Github account with your server via SSH](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#link-your-github-account-with-your-server-via-ssh)
 7. [Support and Donations](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide#support-and-donations)
 8. [License](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide#license)
 9. [Disclaimer](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide#disclaimer)
