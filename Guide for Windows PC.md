@@ -91,9 +91,7 @@ Now that you have successfully logged into your server, you're ready to begin co
 ### Step 4: Log out of your server and log back in as the new user
 
 4. Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address:
-
     `ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember).
-
     If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
 
 ### Step 5: Configure SSH key-based authentication for the new user
