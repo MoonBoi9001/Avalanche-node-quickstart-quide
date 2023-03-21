@@ -145,7 +145,7 @@ Now that you have successfully logged into your server, you're ready to begin co
     
 2. Add the following line to grant your user sudo privileges without a password:
     
-    mainuser ALL=(ALL) NOPASSWD:ALL
+        mainuser ALL=(ALL) NOPASSWD:ALL
         
 3. Save and exit the file:
     - Press `Ctrl + X` to initiate the save process.
