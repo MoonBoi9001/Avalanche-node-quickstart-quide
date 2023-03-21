@@ -212,15 +212,15 @@ Now you have completed the configuration process you can download and install Go
     
 5. Verify that the environment variables are set correctly:
     - Check the updated `PATH` variable:
-        ```
-        echo $PATH
-        ```
+        
+        `echo $PATH`
+        
         This command displays the content of the `PATH` environment variable, ensuring that the Go-related paths have been added successfully.
 
     - Verify the installed Go version:
-        ```
-        go version
-        ```
+        
+        `go version`
+        
         This command prints the version of Go installed on your system. If the output shows the expected Go version, it indicates that the environment variables have been configured correctly. If not, double-check the previous steps.
 
 
