@@ -153,32 +153,35 @@ Close Cmder, then relaunch it and enter the following command, replacing `{ip}` 
 
 ### Step 7: Set up the firewall
 
-1. For this step, we will be using UFW. Because it's incredibly simple to use and very powerful.
+1. For this step, we will be using UFW because it's incredibly simple to use and very powerful. Install UFW by running the following command:
 
-    ```
-    sudo apt install ufw
-    sudo ufw allow 2222
-    ```
-    
-   If your IP is fixed, or you use a VPN, you can change this to `sudo ufw allow 2222 from {IP}`, which is more secure and limits the attack surface of a DDOS attack. It is strongly advised, although technically not strictly necessary. If your fixed IP changes in the future, you will have to update the firewall from your server dashboard, as you won't be able to login via SSH from an IP that has not been whitelisted. 
-    
-    ```
-    sudo ufw allow 9651
-    ```
-    
-   Do not change this. Port 9651 must remain open at all times for your Avalanche node to communicate with other nodes on the Avalanche network. 
-    
-    ```
-    sudo ufw enable
-    ```
+
+    `sudo apt install ufw`
+
+
+2. Allow port 2222 for SSH. If your IP is fixed, or you use a VPN, you can change this to `sudo ufw allow 2222 from {IP}`, which is more secure and limits the attack surface of a DDOS attack. It is strongly advised, although technically not strictly necessary. If your fixed IP changes in the future, you will have to update the firewall from your server dashboard, as you won't be able to login via SSH from an IP that has not been whitelisted.
+
+
+    `sudo ufw allow 2222`
+
+
+3. Allow port 9651 for your Avalanche node to communicate with other nodes on the Avalanche network. Do not change this.
+
+
+    `sudo ufw allow 9651`
+
+
+4. Enable UFW and confirm when prompted:
+
+
+    `sudo ufw enable`
+
     
    Press `y` to proceed.
-    
-    ```
-    sudo ufw status numbered
-    ```
-    
-   You should see that the ports 2222 and 9651 are open and accessible. We will be using port 2222 for SSH. Port 22 should not be open. If port 22 is open, you can close it with `sudo ufw delete allow 22`.
+
+5. Check the UFW status to ensure that ports 2222 and 9651 are open and accessible. Port 22 should not be open. If port 22 is open, you can close it with `sudo ufw delete allow 22`.
+
+    `sudo ufw status numbered`
     
 ### Step 7.1: How to log into your server after Step 7
 
