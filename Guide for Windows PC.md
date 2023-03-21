@@ -8,15 +8,15 @@ Please refer to the [README.md](https://github.com/MoonBoi9001/Avalanche-node-qu
 - A minimum of 2,000 AVAX tokens for staking (accurate at the time of writing; subject to change).
 - Basic understanding of command-line interfaces.
 
-### 1. Download and Install CMDER
+#### 1. Download and Install CMDER
 
 Download and install the latest full version of CMDER, a Linux terminal emulator for Windows, which enables you to log into your server: https://cmder.app/  
 
-### 2. Create a GitHub Account
+#### 2. Create a GitHub Account
 
 Create an account on GitHub if you don't already have one: https://github.com/signup?source=login
 
-### 3. Generate an SSH Keypair
+#### 3. Generate an SSH Keypair
 
 Generate a new SSH keypair to securely log into your server. If you already have a keypair on your PC, you can skip this step.
 
@@ -83,29 +83,29 @@ Enter your secure passphrase for your SSH keypair when prompted.
 
 Now that you have successfully logged into your server, you're ready to begin configuration. The following steps will guide you through setting up your node. Make sure to follow the steps sequentially, as entering the code out of order may result in a failure to set up the node. It's recommended that you read the explanation of the code before entering it into your server so you are aware of what each line performs.
 
-### Step 1: Update the package list and installed packages
+#### Step 1: Update the package list and installed packages
 
 1. `sudo apt update && sudo apt upgrade`. After entering, press `Y` (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process. You don't need to restart any more processes than recommended; simply press `Enter`.
 
-### Step 2: Create a non root user account
+#### Step 2: Create a non root user account
 
 1. `sudo adduser mainuser`. After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
 
-### Step 3: Add the non root user to the sudo group
+#### Step 3: Add the non root user to the sudo group
 
 1. `usermod -aG sudo mainuser`
 
-### Step 4: Log out of your server and log back in as the new user
+#### Step 4: Log out of your server and log back in as the new user
 
 1. Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address `ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
 
-### Step 5: Configure SSH key-based authentication for the new user
+#### Step 5: Configure SSH key-based authentication for the new user
 
 1. First make a new SSH directory in your server `mkdir -p ~/.ssh`. Then, from your windows file explorer, open the `id_rsa.pub` file in your SSH directory (`C:/Users/{enter your username here}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your server. Type `echo {public_key_string} >> ~/.ssh/authorized_keys` but make sure to replace `{public_key_string}` with your entire SSH public key string that you copied from Notepad.
 
 2. Verify the above line worked with the following command, which will show your public SSH key: `nano /home/mainuser/.ssh/authorized_keys` If you can see your public SSH key then you have completed the step successfully. Close the Nano text editor by pressing `CTRL` + `X`.
 
-### Step 6: Secure the SSH configuration
+#### Step 6: Secure the SSH configuration
 
 1. Secure your SSH configuration by setting the appropriate permissions, ownership, and updating the configuration file.
 
@@ -135,7 +135,7 @@ Now that you have successfully logged into your server, you're ready to begin co
     
     Your SSH configuration is now secured.
 
-### Step 7: Set up the firewall
+#### Step 7: Set up the firewall
 
 1. For this step we will be using UFW. Because it's incredibly simple to use and very powerful.
 
@@ -149,13 +149,13 @@ Now that you have successfully logged into your server, you're ready to begin co
     
     `sudo ufw status numbered`. You should see that the ports 2222 and 9651 are open and accessible. We will be using port 2222 for SSH. Port 22 should not be open. If port 22 is open then you can close it. `sudo ufw delete allow 22`
     
-### Step 7.1: How to log into your server after Step 7. 
+#### Step 7.1: How to log into your server after Step 7. 
 
 1. Please note that from now on, to log into your server you will have to specify the port 2222, so use the following:
 
 `ssh mainuser@{IP} -p 2222`
     
-### Step 8: Configure sudo privileges
+#### Step 8: Configure sudo privileges
 1. Open the sudoers file for editing by running the following command:
     
     `sudo visudo`
@@ -177,7 +177,7 @@ Now that you have successfully logged into your server, you're ready to begin co
 
 Now you have completed the configuration process you can download and install Go which you will need for your node to validate the Avalanche network.
 
-### Step 1: Download & Install the latest Go version
+#### Step 1: Download & Install the latest Go version
 
 1. Go to https://go.dev/dl/ to find the latest linux version of golang. You want to find the version that ends with `.linux-amd64.tar.gz`. At the time of writing, the latest version is `go1.20.2.linux-amd64.tar.gz`. Copy the version name `go1.20.2.linux-amd64.tar.gz`, or the latest version available when you check. Then change the first two lines of code below to account for the latest verison and enter them into your Cmder terminal:
 
@@ -192,7 +192,7 @@ Now you have completed the configuration process you can download and install Go
     
     `mkdir -p ~/go_projects/{bin,src,pkg}`
 
-### Step 2: Setup your enviroment vairables:
+#### Step 2: Setup your enviroment vairables:
 
 1. Use a text editor such as nano to open the `.profile` file so you can configure enviroment vairables.
 
@@ -234,7 +234,7 @@ Now you have completed the configuration process you can download and install Go
 
 Now you need to link your github account with your server via SSH so you can download AvalancheGo from Github.
 
-### Step 1: Open your SSH directory and generate a SSH key pair.
+#### Step 1: Open your SSH directory and generate a SSH key pair.
 
 `cd /home/mainuser/.ssh`
 
@@ -243,7 +243,7 @@ Now you need to link your github account with your server via SSH so you can dow
 - Press `Enter` to accept default file save location.
 - Enter a secure passphrase if desired.
     
-### Step 2: Copy your SSH public key.
+#### Step 2: Copy your SSH public key.
 
 The next line of code will show the new SSH keys.
 
@@ -255,13 +255,13 @@ Copy the ENTIRE contents of the .pub file to windows clipboard, do this simply b
     
 Press `Ctrl + x`, you should not need to press y or enter as you have not modified the file.
     
-### Step 2: Paste your SSH key into Github.
+#### Step 2: Paste your SSH key into Github.
 
 Now go to the [Github SSH Key Page](https://github.com/settings/keys)
 
 Press `New SSH key` and then paste the .pub file contents into Github, set a appropriate title e.g `AVAX Server AX41-NVME` and click `save`.
 
-### Step 3: Clone and build the AvalancheGo Github
+#### Step 3: Clone and build the AvalancheGo Github
 
 1. Change directory to your GOPATH.
 
@@ -324,7 +324,7 @@ Press `New SSH key` and then paste the .pub file contents into Github, set a app
 
 ## Next day tasks (Or after bootstrappoing is complete which takes about 24 hours AFAIK) Very important!:
 
-### Step 1: Check that bootstrapping is complete.
+#### Step 1: Check that bootstrapping is complete.
 
 1.  You can check that bootstrapping is complete with the following health check.
 
@@ -338,7 +338,7 @@ Press `New SSH key` and then paste the .pub file contents into Github, set a app
 
 If bootstrapping is complete then one of the final outputs of the health check should be: `"healthy":true`.
 
-### Step 2: Backup your staking keys.
+#### Step 2: Backup your staking keys.
 
 1. Next you will NEED to backup your staking keys!!! (Very important!)
 2. Open a terminal window on your Windows PC by typing CMD into the windows searchbar and clicking on command prompt.
@@ -347,7 +347,7 @@ If bootstrapping is complete then one of the final outputs of the health check s
     Make sure to replace `mainuser` with whatever you called your login (if you followed my guide then you chose mainuser anyway so no need to change it), also make sure to replace `xxx.xxx.xxx.xxx` with your servers IP, also make sure to replace `avalanche_backup_todays_date` with the actual date e.g `avalanche_backup_21_03_2023`...
 4. Verify that your staker keys have been saved to the chosen directory on your Windows PC and I also strongly recommend saving them to a pen stick or removable storage device for extra safety. If your node is ever shutdown or goes wrong and you need to restore your NodeID on another server then you will need these files to restore the NodeID and retain your staking uptime. Avalanche requires a MINIMUM staking uptime of 80%+ (at time of writing) for rewards payout. 
 
-### Step 3: Find your NodeID:
+#### Step 3: Find your NodeID:
 
 1. Next you'll need to find out your NodeID. Run the command below from your linux server terminal cmder
 
@@ -365,7 +365,7 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
 
 #### Note: This is an incredibly important part of this guide. You will need to monitor your node for the duration of time you are staking. Failing to monitor your node is likely to lead to a rewards payout miss for you and your delegators. At the time of writing the required uptime for staking rewards is 80% and there is no slashing. Non-default subnets may have different requirements to the C/X/P chains. It's your responsibility to be aware of the full requirements to recieve staking rewards and your responsibility to research the full risks involved for validating any subnets. 
 
-### Step 1: How to monitor your node. 
+#### Step 1: How to monitor your node. 
 
 1. Firstly, you can do a health check when logged into your server by entering the following into the terminal:
     
@@ -406,7 +406,7 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
 8. I suggest you bookmark the links in steps 4 to 7 inclusive, with your NodeID entered to each, so you can quickly and easily check your node performance. It is not sufficient to only use 1 provider.  
 
 
-### Step 2: How to update your node when new versions come out
+#### Step 2: How to update your node when new versions come out
 
 1. If you have the installer script configured (you should if you followed this guide) then you can run:
 
@@ -448,19 +448,17 @@ Now go back to the [node monitoring sites above](https://github.com/MoonBoi9001/
 
 
 
-# You are now finished with this guide. If you need any further help I reccomend going to the Avalanche discord (please be careful of scammers pretending to be from the Avalanche team that are reaching out to you in your Direct/Private messages)
+# You are almost finished with this guide. If you need any further help I reccomend going to the Avalanche discord (please be careful of scammers pretending to be from the Avalanche team that are reaching out to you in your Direct/Private messages)
+
 #### Relevant Discord Channels below:
 #### https://discord.com/channels/578992315641626624/620633143002660874
 #### https://discord.com/channels/578992315641626624/757576823570825316
-
-
-
 
 ## How to restore your NodeID from backed up staking keys:
 
 Lets imagine your node has gone offline and you are now trying to restore your staking keys to a fresh node, then the process you would follow is as follows: (bear in mind you should only have your stakeing keys active on 1 node at a time to prevent potential network conflicts).
 
-### Step 1: 
+#### Step 1: 
 1. Open up a windows terminal by typing `cmd` into the windows search and clicking to open command prompt.
 
 3. Type the following 3 lines of code into your terminal, make sure to replace `{your username}`, `{backup date}`, `mainuser` and `xxx.xxx.xxx.xxx` with the actual values that reflect your circumstances. (you may have to edit the full directory path if your staking keys are saved elsewhere. This will use SSH to copy and paste your staking keys from the directory where they are saved to a temporary directory on your server.
