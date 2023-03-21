@@ -332,7 +332,9 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
 
 #### Note: This is an incredibly important part of this guide. You will need to monitor your node for the duration of time you are staking. Failing to monitor your node is likely to lead to a rewards payout miss for you and your delegators. At the time of writing the required uptime for staking rewards is 80% and there is no slashing. Non-default subnets may have different requirements to the C/X/P chains. It's your responsibility to be aware of the full requirements to recieve staking rewards and your responsibility to research the full risks involved for validating any subnets. 
 
-1. Firstly, you can always do a health check:
+### Step 1: How to monitor your node. 
+
+1. Firstly, you can do a health check when logged into your server by entering the following into the terminal:
     
     ```
     curl -X POST --data '{
@@ -342,66 +344,66 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
     ```
 
-Every so often a new version of AvalancheGo will come out. Be sure to follow the public Avalanche Announcements on Discord, Telegram and Twitter:
+2. Every so often a new version of AvalancheGo will come out. Be sure to follow the public Avalanche Announcements on Discord, Telegram and Twitter:
 
     - https://discord.com/channels/578992315641626624/757973465444778084 
     - https://t.me/avalanche_announcements 
     - https://twitter.com/avalancheavax , https://twitter.com/_patrickogrady 
 
-You should also use the official Avalanche Node notification service to monitor your node:
+3. You should also use the official Avalanche Node notification service to monitor your node:
 
     - https://notify.avax.network/
     
-You should also use the validator dashboard: (enter your NodeID into the NodeID box on the page)
+4. You should also use the validator dashboard: (enter your NodeID into the NodeID box on the page)
 
     - https://stats.avax.network/dashboard/validator-health-check/
     
-You should also use AllNodes:
+5. You should also use AllNodes:
 
     - https://check.allnodes.com
     
-You should also use VScout
+6. You should also use VScout
 
     - https://vscout.io/validator
 
-You should also use AVASCAN:
+7. You should also use AVASCAN:
 
     - https://avascan.info/staking/validator
 
-I suggest you bookmark all those pages above, with your NodeID entered to each, so you can quickly and easily check your node performance. 
+8. I suggest you bookmark the links in steps 4 to 7 inclusive, with your NodeID entered to each, so you can quickly and easily check your node performance. It is not sufficient to only use 1 provider.  
 
 
-How do you update your node when new versions come out?
+### Step 2: How to update your node when new versions come out
 
-#### Simply run:
-# ./avalanchego-installer.sh
-#### If the above doesn't work then:
-# wget -nd -m https://raw.githubusercontent.com/ava-labs/avalanche-docs/master/scripts/avalanchego-installer.sh;\
-# chmod 755 avalanchego-installer.sh;\
-# ./avalanchego-installer.sh
-#### Press 2 for cloud provider.
-#### Press n if it doesn't show your IP (it didn't for me).
-#### Enter your ip that you use to connect to your server.
-#### Type "private" then type "on" to turn on state sync (unless you NEED the historical data, TIP: most don't).
-#### Then run:
-# ./avalanchego-installer.sh --reinstall
-#### Press 2 for cloud provider.
-#### Press n if it doesn't show your IP (it didn't for me).
-#### Enter your ip that you use to connect to your server.
-#### Type "private" then type "on" to turn on state sync (unless you NEED the historical data, TIP: most don't).
-# GIVE THIS A FEW MINS FIRST, and then do a health check.
+1. If you have the installer script configured (you should if you followed this guide) then you can run:
+    - `./avalanchego-installer.sh`
+    
+    If the above doesn't work then try:
+        ```
+        wget -nd -m https://raw.githubusercontent.com/ava-labs/avalanche-docs/master/scripts/avalanchego-installer.sh;\
+        chmod 755 avalanchego-installer.sh;\
+        ./avalanchego-installer.sh --reinstall
+        ```
+        
+Press `2` for cloud provider.
 
+Press `n` if it doesn't show your IP (it didn't for me).
 
-```python
-curl -X POST --data '{
+Enter your IP that you use to connect to your server.
+
+Type `private` then type `on` to turn on state sync (unless you NEED the historical data, TIP: most don't).
+
+GIVE THIS A FEW MINS FIRST, and then do a health check.
+
+    ```
+    curl -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
     "method" :"health.health"
-}' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
-```
+    }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
+    ```
 
-# You can also check uptime:
-
+You can also check uptime:
 
     ```
     curl -X POST --data '{
