@@ -79,21 +79,9 @@ Your Linux terminal emulator will now connect to your server and prompt you to t
 #### Step 4: Enter your secure passphrase
 Enter your secure passphrase for your SSH keypair when prompted.
 
-## Beginning configuration of your server.
-
-
-
-
-
 ## Beginning configuration of your server
 
 Now that you have successfully logged into your server, you're ready to begin configuration. The following steps will guide you through setting up your node. Make sure to follow the steps sequentially, as entering the code out of order may result in a failure to set up the node. It's recommended that you read the explanation of the code before entering it into your server so you are aware of what each line performs.
-
-
-#### Step 1: Update the package list and installed packages
-
-1. `sudo apt update && sudo apt upgrade`. After entering, press `Y` (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process. You don't need to restart any more processes than recommended; simply press `Enter`.
-
 
 ### Step 1: Update the package list and installed packages
 
@@ -101,44 +89,19 @@ Run: `sudo apt update && sudo apt upgrade`
 
 After entering, press `Y` (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process. You don't need to restart any more processes than recommended; simply press `Enter`.
 
-
-#### Step 2: Create a non root user account
-
-1. `sudo adduser mainuser`. After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
-
-
-
 ### Step 2: Create a non-root user account
 
 Run: `sudo adduser mainuser`
 
 After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
 
-#### Step 3: Add the non root user to the sudo group
-
-1. `usermod -aG sudo mainuser`
-
-
-
 ### Step 3: Add the non-root user to the sudo group
 
 Run: `usermod -aG sudo mainuser`
 
-#### Step 4: Log out of your server and log back in as the new user
-
-1. Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address `ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
-
-
 ### Step 4: Log out of your server and log back in as the new user
 
 Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address: `ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
-
-#### Step 5: Configure SSH key-based authentication for the new user
-
-1. First make a new SSH directory in your server `mkdir -p ~/.ssh`. Then, from your windows file explorer, open the `id_rsa.pub` file in your SSH directory (`C:/Users/{enter your username here}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your server. Type `echo {public_key_string} >> ~/.ssh/authorized_keys` but make sure to replace `{public_key_string}` with your entire SSH public key string that you copied from Notepad.
-
-2. Verify the above line worked with the following command, which will show your public SSH key: `nano /home/mainuser/.ssh/authorized_keys` If you can see your public SSH key then you have completed the step successfully. Close the Nano text editor by pressing `CTRL` + `X`.
-
 
 ### Step 5: Configure SSH key-based authentication for the new user
 
@@ -173,53 +136,10 @@ Close Cmder, then relaunch it and enter the following command, replacing `{ip}` 
 
 3. Find and change the following lines:
 
-    - `PermitRootLogin yes`
-    - `PubkeyAuthentication yes`
-    - `PasswordAuthentication no`
-    -
-
-
-
-#### Step 1: Update the package list and installed packages
-
-1. `sudo apt update && sudo apt upgrade`. After entering, press `Y` (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process. You don't need to restart any more processes than recommended; simply press `Enter`.
-
-#### Step 2: Create a non root user account
-
-1. `sudo adduser mainuser`. After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
-
-#### Step 3: Add the non root user to the sudo group
-
-1. `usermod -aG sudo mainuser`
-
-#### Step 4: Log out of your server and log back in as the new user
-
-1. Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address `ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
-
-#### Step 5: Configure SSH key-based authentication for the new user
-
-1. First make a new SSH directory in your server `mkdir -p ~/.ssh`. Then, from your windows file explorer, open the `id_rsa.pub` file in your SSH directory (`C:/Users/{enter your username here}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your server. Type `echo {public_key_string} >> ~/.ssh/authorized_keys` but make sure to replace `{public_key_string}` with your entire SSH public key string that you copied from Notepad.
-
-2. Verify the above line worked with the following command, which will show your public SSH key: `nano /home/mainuser/.ssh/authorized_keys` If you can see your public SSH key then you have completed the step successfully. Close the Nano text editor by pressing `CTRL` + `X`.
-
-#### Step 6: Secure the SSH configuration
-
-1. Secure your SSH configuration by setting the appropriate permissions, ownership, and updating the configuration file.
-
-    `chmod -R go= ~/.ssh`
-    
-    `chown -R mainuser:mainuser ~/.ssh`
-        
-2. Open the SSH configuration file with nano:
-    
-    `sudo nano /etc/ssh/sshd_config`. Then enter your user password (the one you were supposed to remember).
-
-3. Find and change the following lines:
-
-    - `PermitRootLogin yes`
-    - `PubkeyAuthentication yes`
-    - `PasswordAuthentication no`
-    - `PermitEmptyPasswords yes`
+    - `PermitRootLogin yes` to `PermitRootLogin no`
+    - Make sure `PubkeyAuthentication` is set to `yes`
+    - Change `PasswordAuthentication yes` to `PasswordAuthentication no`
+    - Change `PermitEmptyPasswords yes` to `PermitEmptyPasswords no`
 
 4. Save and exit the file:
     - Press `Ctrl + X` to initiate the save process.
@@ -232,40 +152,56 @@ Close Cmder, then relaunch it and enter the following command, replacing `{ip}` 
     
     Your SSH configuration is now secured.
 
-#### Step 7: Set up the firewall
+### Step 7: Set up the firewall
 
-1. For this step we will be using UFW. Because it's incredibly simple to use and very powerful.
+1. For this step, we will be using UFW. Because it's incredibly simple to use and very powerful.
 
-    `sudo apt install ufw`
+    ```
+    sudo apt install ufw
+    sudo ufw allow 2222
+    ```
     
-    `sudo ufw allow 2222`. If your IP is fixed, or you use a VPN then you can change this to `sudo ufw allow 2222 from {IP}`, this is more secure and limits the attack surface of a DDOS attack, so it is strongly advised, although technically not strictly nescessary. If your fixed IP changes in the future, then you will have to update the firewall from your server dashboard, as you wont be able to login via SSH from an IP that has not been whitelisted. 
+   If your IP is fixed, or you use a VPN, you can change this to `sudo ufw allow 2222 from {IP}`, which is more secure and limits the attack surface of a DDOS attack. It is strongly advised, although technically not strictly necessary. If your fixed IP changes in the future, you will have to update the firewall from your server dashboard, as you won't be able to login via SSH from an IP that has not been whitelisted. 
     
-    `sudo ufw allow 9651`. Do not change this. Port 9651 must remain open at all times for your Avalanche node to communicate with other nodes on the Avalanche network. 
+    ```
+    sudo ufw allow 9651
+    ```
     
-    `sudo ufw enable`. Press `y` to proceed.
+   Do not change this. Port 9651 must remain open at all times for your Avalanche node to communicate with other nodes on the Avalanche network. 
     
-    `sudo ufw status numbered`. You should see that the ports 2222 and 9651 are open and accessible. We will be using port 2222 for SSH. Port 22 should not be open. If port 22 is open then you can close it. `sudo ufw delete allow 22`
+    ```
+    sudo ufw enable
+    ```
     
-#### Step 7.1: How to log into your server after Step 7. 
+   Press `y` to proceed.
+    
+    ```
+    sudo ufw status numbered
+    ```
+    
+   You should see that the ports 2222 and 9651 are open and accessible. We will be using port 2222 for SSH. Port 22 should not be open. If port 22 is open, you can close it with `sudo ufw delete allow 22`.
+    
+### Step 7.1: How to log into your server after Step 7
 
-1. Please note that from now on, to log into your server you will have to specify the port 2222, so use the following:
+1. Please note that from now on, to log into your server, you will have to specify port 2222. Use the following command:
 
-`ssh mainuser@{IP} -p 2222`
-    
-#### Step 8: Configure sudo privileges
+    `ssh mainuser@{IP} -p 2222`
+
+### Step 8: Configure sudo privileges
+
 1. Open the sudoers file for editing by running the following command:
-    
+
     `sudo visudo`
     
 2. Add the following line to grant your user sudo privileges without a password:
-    
+
     `mainuser ALL=(ALL) NOPASSWD:ALL`
-        
+
 3. Save and exit the file:
     - Press `Ctrl + X` to initiate the save process.
     - Press `Y` to confirm the save.
     - Press `Enter` to save the modified buffer and exit.
-    
+
 4. Disable the password requirement for your current user by running the following command:
 
     `sudo passwd -d $(whoami)`
