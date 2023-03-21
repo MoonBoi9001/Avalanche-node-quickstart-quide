@@ -229,20 +229,20 @@ Now you need to link your github account with your server via SSH so you can dow
 
 ### Step 1: Open your SSH directory and generate a SSH key pair.
 
-    `cd /home/mainuser/.ssh`
-    `ssh-keygen -t ed25519 -C your_github_email@example.com` Make sure to replace `your_github_email@example.com` with your actual Github account email. You can find your github email at the following link: [Github](https://github.com/settings/emails)
+`cd /home/mainuser/.ssh`
+`ssh-keygen -t ed25519 -C your_github_email@example.com` Make sure to replace `your_github_email@example.com` with your actual Github account email. You can find your github email at the following link: [Github](https://github.com/settings/emails)
     
-    - Press `Enter` to accept default file save location.
-    - Enter a secure passphrase if desired.
+- Press `Enter` to accept default file save location.
+- Enter a secure passphrase if desired.
     
 ### Step 2: Copy your SSH public key.
 
-    The next line of code will show the new SSH keys.
-    `ls -al ~/.ssh`
-    `nano ~/.ssh/id_ed25519.pub`
-    Copy the ENTIRE contents of the .pub file to windows clipboard, do this simply by highlighting the text and it will auto copy.
+The next line of code will show the new SSH keys.
+`ls -al ~/.ssh`
+`nano ~/.ssh/id_ed25519.pub`
+Copy the ENTIRE contents of the .pub file to windows clipboard, do this simply by highlighting the text and it will auto copy.
     
-    Press `Ctrl + x`, you should not need to press y or enter as you have not modified the file.
+Press `Ctrl + x`, you should not need to press y or enter as you have not modified the file.
     
 ### Step 2: Paste your SSH key into Github.
 
