@@ -101,21 +101,27 @@ Run: `usermod -aG sudo mainuser`
 
 ### Step 4: Log out of your server and log back in as the new user
 
-Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address: `ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
+Run: `exit`
+
+This will log you out of your server. Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address:
+
+Run: `ssh mainuser@{ip}`
+
+Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
 
 ### Step 5: Configure SSH key-based authentication for the new user
 
 1. First make a new SSH directory in your server:
 
-    `mkdir -p ~/.ssh`
+    Run: `mkdir -p ~/.ssh`
     
 2. Then, from your Windows File Explorer, open the `id_rsa.pub` file in your SSH directory (`C:/Users/{enter your username here}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your server. Type the following, replacing `{public_key_string}` with your entire SSH public key string that you copied from Notepad:
 
-    `echo {public_key_string} >> ~/.ssh/authorized_keys`
+    Run: `echo '{public_key_string}' >> ~/.ssh/authorized_keys`
     
 3. Verify the above line worked with the following command, which will show your public SSH key:
 
-    `nano /home/mainuser/.ssh/authorized_keys`
+    Run: `nano /home/mainuser/.ssh/authorized_keys`
     
    If you can see your public SSH key then you have completed the step successfully. Close the Nano text editor by pressing `CTRL` + `X`.
 
@@ -123,19 +129,19 @@ Close Cmder, then relaunch it and enter the following command, replacing `{ip}` 
 
 1. Secure your SSH configuration by setting the appropriate permissions, ownership, and updating the configuration file:
 
-    `chmod -R go= ~/.ssh`
+    Run: `chmod -R go= ~/.ssh`
     
-    `chown -R mainuser:mainuser ~/.ssh`
+    Run: `chown -R mainuser:mainuser ~/.ssh`
     
 2. Open the SSH configuration file with nano:
 
-    `sudo nano /etc/ssh/sshd_config`
+    Run: `sudo nano /etc/ssh/sshd_config`
     
    Then enter your user password (the one you were supposed to remember).
 
 3. Find and change the following lines:
 
-    - `PermitRootLogin yes` to `PermitRootLogin no`
+    - Change `PermitRootLogin yes` to `PermitRootLogin no`
     - Make sure `PubkeyAuthentication` is set to `yes`
     - Change `PasswordAuthentication yes` to `PasswordAuthentication no`
     - Change `PermitEmptyPasswords yes` to `PermitEmptyPasswords no`
@@ -147,57 +153,49 @@ Close Cmder, then relaunch it and enter the following command, replacing `{ip}` 
     
 5. Restart the SSH service to apply the changes:
     
-    `sudo systemctl restart ssh`
+    Run: `sudo systemctl restart ssh`
     
-    Your SSH configuration is now secured.
+    Your SSH configuration has been made more secure by following these steps. However, it's crucial to remember that no system can be completely secure, and you should always stay up to date with best practices and security recommendations.
 
 ### Step 7: Set up the firewall
 
 1. For this step, we will be using UFW because it's incredibly simple to use and very powerful. Install UFW by running the following command:
 
-
-    `sudo apt install ufw`
-
+    Run: `sudo apt install ufw`
 
 2. Allow port 2222 for SSH. If your IP is fixed, or you use a VPN, you can change this to `sudo ufw allow 2222 from {IP}`, which is more secure and limits the attack surface of a DDOS attack. It is strongly advised, although technically not strictly necessary. If your fixed IP changes in the future, you will have to update the firewall from your server dashboard, as you won't be able to login via SSH from an IP that has not been whitelisted.
 
-
-    `sudo ufw allow 2222`
-
+    Run: `sudo ufw allow 2222`
 
 3. Allow port 9651 for your Avalanche node to communicate with other nodes on the Avalanche network. Do not change this.
 
-
-    `sudo ufw allow 9651`
-
+    Run: `sudo ufw allow 9651`
 
 4. Enable UFW and confirm when prompted:
 
+    Run: `sudo ufw enable`
 
-    `sudo ufw enable`
-
-    
    Press `y` to proceed.
 
 5. Check the UFW status to ensure that ports 2222 and 9651 are open and accessible. Port 22 should not be open. If port 22 is open, you can close it with `sudo ufw delete allow 22`.
 
-    `sudo ufw status numbered`
-    
+    Run: `sudo ufw status numbered`
+
 ### Step 7.1: How to log into your server after Step 7
 
 1. Please note that from now on, to log into your server, you will have to specify port 2222. Use the following command:
 
-    `ssh mainuser@{IP} -p 2222`
+    Run: `ssh mainuser@{IP} -p 2222`
 
 ### Step 8: Configure sudo privileges
 
 1. Open the sudoers file for editing by running the following command:
 
-    `sudo visudo`
+    Run: `sudo visudo`
     
 2. Add the following line to grant your user sudo privileges without a password:
 
-    `mainuser ALL=(ALL) NOPASSWD:ALL`
+    Add: `mainuser ALL=(ALL) NOPASSWD:ALL`
 
 3. Save and exit the file:
     - Press `Ctrl + X` to initiate the save process.
@@ -206,34 +204,33 @@ Close Cmder, then relaunch it and enter the following command, replacing `{ip}` 
 
 4. Disable the password requirement for your current user by running the following command:
 
-    `sudo passwd -d $(whoami)`
+    Run: `sudo passwd -d $(whoami)`
 
-## Download Go onto your configured server. 
+## Download Go onto your configured server
 
-Now you have completed the configuration process you can download and install Go which you will need for your node to validate the Avalanche network.
+Now you have completed the configuration process, you can download and install Go, which you will need for your node to validate the Avalanche network.
 
-#### Step 1: Download & Install the latest Go version
+### Step 1: Download & Install the latest Go version
 
-1. Go to https://go.dev/dl/ to find the latest linux version of golang. You want to find the version that ends with `.linux-amd64.tar.gz`. At the time of writing, the latest version is `go1.20.2.linux-amd64.tar.gz`. Copy the version name `go1.20.2.linux-amd64.tar.gz`, or the latest version available when you check. Then change the first two lines of code below to account for the latest verison and enter them into your Cmder terminal:
+1. Go to https://go.dev/dl/ to find the latest Linux version of Golang. You want to find the version that ends with `.linux-amd64.tar.gz`. At the time of writing, the latest version is `go1.20.2.linux-amd64.tar.gz`. Copy the version name `go1.20.2.linux-amd64.tar.gz`, or the latest version available when you check. Then change the first two lines of code below to account for the latest version and enter them into your Cmder terminal:
 
-    - `wget -c https://golang.org/dl/go1.20.2.linux-amd64.tar.gz`
-    - `sudo tar -C /usr/local -xvzf go1.20.2.linux-amd64.tar.gz`
+    Run: `wget -c https://golang.org/dl/go1.20.2.linux-amd64.tar.gz`
+    Run: `sudo tar -C /usr/local -xvzf go1.20.2.linux-amd64.tar.gz`
 
 2. Take ownership of the `/usr/local/go` directory
 
-    `sudo chown -R mainuser:mainuser /usr/local/go`
-    
-3. Make 3 new folders isnide the `/usr/local/go` directory
-    
-    `mkdir -p ~/go_projects/{bin,src,pkg}`
+    Run: `sudo chown -R mainuser:mainuser /usr/local/go`
 
-#### Step 2: Setup your enviroment vairables:
+3. Make 3 new folders inside the `/usr/local/go` directory
 
-1. Use a text editor such as nano to open the `.profile` file so you can configure enviroment vairables.
+    Run: `mkdir -p ~/go_projects/{bin,src,pkg}`
 
-    `nano ~/.profile`
-    
-    
+### Step 2: Set up your environment variables
+
+1. Use a text editor such as nano to open the `.profile` file so you can configure environment variables.
+
+    Run: `nano ~/.profile`
+
 2. Add the following following lines to the file (you can paste them above the line that says #if running bash):
 
         export GOPATH=$HOME/go
@@ -242,7 +239,7 @@ Now you have completed the configuration process you can download and install Go
         export PATH=$PATH:/usr/local/go/bin
         export GOPATH="$HOME/go_projects"
         export GOBIN="$GOPATH/bin"
-        
+
 3. Save and exit the file:
     - Press `Ctrl + X` to initiate the save process.
     - Press `Y` to confirm the save.
@@ -250,19 +247,19 @@ Now you have completed the configuration process you can download and install Go
 
 4. Reload the `.profile` file to apply the changes:
 
-    `. ~/.profile`
-    
+    Run: `. ~/.profile`
+
 5. Verify that the environment variables are set correctly:
     - Check the updated `PATH` variable:
-        
-        `echo $PATH`
-        
+
+        Run: `echo $PATH`
+
         This command displays the content of the `PATH` environment variable, ensuring that the Go-related paths have been added successfully.
 
     - Verify the installed Go version:
-        
-        `go version`
-        
+
+        Run: `go version`
+
         This command prints the version of Go installed on your system. If the output shows the expected Go version, it indicates that the environment variables have been configured correctly. If not, double-check the previous steps.
 
 ## Link your Github account with your server via SSH.
