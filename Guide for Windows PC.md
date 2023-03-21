@@ -254,21 +254,29 @@ Now go to the [Github SSH Key Page](https://github.com/settings/keys)
 
 Press `New SSH key` and then paste the .pub file contents into Github, set a appropriate title e.g `AVAX Server AX41-NVME` and click `save`.
 
-# cd $GOPATH
+### Step 3: Clone and build the AvalancheGo Github
 
-# mkdir -p src/github.com/ava-labs
-# cd src/github.com/ava-labs
-# git clone git@github.com:ava-labs/avalanchego.git 
-#### Accept the key fingerprint and continue connection with "yes".
-#### Enter your passphrase for your SSH key if you created one.
-# cd avalanchego
-# sudo apt-get install build-essential
-#### Press Y, then press enter twice when prompted.
-# ./scripts/build.sh
+    `cd $GOPATH`
 
-    wget -nd -m https://raw.githubusercontent.com/ava-labs/avalanche-docs/master/scripts/avalanchego-installer.sh;\
-    chmod 755 avalanchego-installer.sh;\
-    ./avalanchego-installer.sh
+    `mkdir -p src/github.com/ava-labs`
+    
+    `cd src/github.com/ava-labs`
+    
+    `git clone git@github.com:ava-labs/avalanchego.git `
+
+    Accept the key fingerprint and continue connection with "yes". Then enter your passphrase for your SSH key if you created one.
+
+    `cd avalanchego`
+    
+    `sudo apt-get install build-essential`
+    
+    Press `Y`, then press `Enter` twice when prompted.
+    
+    `./scripts/build.sh`
+
+        wget -nd -m https://raw.githubusercontent.com/ava-labs/avalanche-docs/master/scripts/avalanchego-installer.sh;\
+        chmod 755 avalanchego-installer.sh;\
+        ./avalanchego-installer.sh
     
 Press `2` for cloud provider.
 
