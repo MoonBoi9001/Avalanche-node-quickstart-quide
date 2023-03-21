@@ -295,11 +295,13 @@ Press `Ctrl + c` when you wish to stop reading node output.
 
 1.  You can check that bootstrapping is complete with the following health check.
 
+    ```
     curl -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
     "method" :"health.health"
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
+    ```
 
 If bootstrapping is complete then one of the final outputs of the health check should be: `"healthy":true`.
 
