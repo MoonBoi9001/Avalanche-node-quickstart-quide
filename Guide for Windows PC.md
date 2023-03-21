@@ -376,9 +376,11 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
 ### Step 2: How to update your node when new versions come out
 
 1. If you have the installer script configured (you should if you followed this guide) then you can run:
-    - `./avalanchego-installer.sh`
+
+   `./avalanchego-installer.sh`
     
     If the above doesn't work then try:
+    
         ```
         wget -nd -m https://raw.githubusercontent.com/ava-labs/avalanche-docs/master/scripts/avalanchego-installer.sh;\
         chmod 755 avalanchego-installer.sh;\
