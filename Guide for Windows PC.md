@@ -256,17 +256,29 @@ Press `New SSH key` and then paste the .pub file contents into Github, set a app
 
 ### Step 3: Clone and build the AvalancheGo Github
 
+1. Change directory to your GOPATH.
+
     `cd $GOPATH`
+    
+2. Make a directory for ava-labs.
 
     `mkdir -p src/github.com/ava-labs`
     
+3. Change directory to newly created ava-labs directory.
+    
     `cd src/github.com/ava-labs`
+    
+4. Clone the Ava-Labs Github Repo to this directory.
     
     `git clone git@github.com:ava-labs/avalanchego.git `
 
-    Accept the key fingerprint and continue connection with "yes". Then enter your passphrase for your SSH key if you created one.
+    Accept the key fingerprint and continue connection with `yes`. Then enter your passphrase for your SSH key if you created one.
+    
+5. Change directory to newly created ava-labs directory.
 
     `cd avalanchego`
+    
+6. Install & build the directory.
     
     `sudo apt-get install build-essential`
     
@@ -274,27 +286,33 @@ Press `New SSH key` and then paste the .pub file contents into Github, set a app
     
     `./scripts/build.sh`
 
+7. Run the installer script.
+
         wget -nd -m https://raw.githubusercontent.com/ava-labs/avalanche-docs/master/scripts/avalanchego-installer.sh;\
         chmod 755 avalanchego-installer.sh;\
         ./avalanchego-installer.sh
     
-Press `2` for cloud provider.
+    Press `2` for cloud provider.
 
-Press `n` if it doesn't show your IP (it didn't for me).
+    Press `n` if it doesn't show your IP (it didn't for me).
 
-Enter your IP that you use to connect to your server.
+    Enter your IP that you use to connect to your server.
 
-Type `private` then type `on` to turn on state sync (unless you NEED the historical data, TIP: most don't).
+    Type `private` then type `on` to turn on state sync (unless you NEED the historical data, TIP: most don't).
 
-`sudo systemctl status avalanchego`
+8. Check everything is working as intended.
 
-The above line should show active (running), if it does then just press q and exit the server and give it a day to bootstrap, come back in 24 hours or so to check in on the progress :)
+    `sudo systemctl status avalanchego`
 
-`sudo journalctl -u avalanchego -f`
+    The above line should show `active (running)`, if it does then just press `q` and then exit the server, give it a day or so to finish bootstrapping.
 
-This line enables to to read the system output and see when bootstrapping is nearly finished.
+9. Check system output:
 
-Press `Ctrl + c` when you wish to stop reading node output.
+    `sudo journalctl -u avalanchego -f`
+
+    This line enables to to read the system output and see when bootstrapping is nearly finished.
+
+    Press `Ctrl + c` when you wish to stop reading node output.
 
 
 ## Next day tasks (Or after bootstrappoing is complete which takes about 24 hours AFAIK) Very important!:
