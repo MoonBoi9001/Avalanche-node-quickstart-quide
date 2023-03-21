@@ -109,11 +109,8 @@ Now that you have successfully logged into your server, you're ready to begin co
 Find and change the following lines:
 
     `PermitRootLogin yes`
-
     `PubkeyAuthentication yes`
-
     `PasswordAuthentication no`
-
     `PermitEmptyPasswords yes`
 
 Then press `Ctrl` + `x`, press `Y` to save the modified buffer, and then press `Enter` to write the file.
