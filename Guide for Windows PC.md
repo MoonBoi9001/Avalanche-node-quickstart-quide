@@ -135,15 +135,15 @@ Close Cmder, then relaunch it and enter the following command, replacing `{ip}` 
 
 3. Find and change the following lines:
 
-- `PermitRootLogin yes` to `PermitRootLogin no`
-- Make sure `PubkeyAuthentication` is set to `yes`
-- Change `PasswordAuthentication yes` to `PasswordAuthentication no`
-- Change `PermitEmptyPasswords yes` to `PermitEmptyPasswords no`
+    - `PermitRootLogin yes` to `PermitRootLogin no`
+    - Make sure `PubkeyAuthentication` is set to `yes`
+    - Change `PasswordAuthentication yes` to `PasswordAuthentication no`
+    - Change `PermitEmptyPasswords yes` to `PermitEmptyPasswords no`
 
 4. Save and exit the file:
-- Press `Ctrl + X` to initiate the save process.
-- Press `Y` to confirm the save.
-- Press `Enter` to save the modified buffer and exit.
+    - Press `Ctrl + X` to initiate the save process.
+    - Press `Y` to confirm the save.
+    - Press `Enter` to save the modified buffer and exit.
     
 5. Restart the SSH service to apply the changes:
     
