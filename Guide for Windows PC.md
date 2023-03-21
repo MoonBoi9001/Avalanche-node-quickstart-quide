@@ -139,21 +139,21 @@ Now that you have successfully logged into your server, you're ready to begin co
     `sudo ufw status numbered`. You should see that the ports 2222 and 9651 are open and accessible. We will be using port 2222 for SSH. Port 22 should not be open. If port 22 is open then you can close it. `sudo ufw delete allow 22`
     
 ### Step 8: Configure sudo privileges
-    1. Open the sudoers file for editing by running the following command:
+1. Open the sudoers file for editing by running the following command:
     
     `sudo visudo`
     
-    2. Add the following line to grant your user sudo privileges without a password:
+2. Add the following line to grant your user sudo privileges without a password:
     
-        mainuser ALL=(ALL) NOPASSWD:ALL
+    mainuser ALL=(ALL) NOPASSWD:ALL
         
-    3. Save and exit the file:
-        - Press `Ctrl + X` to initiate the save process.
-        - Press `Y` to confirm the save.
-        - Press `Enter` to save the modified buffer and exit.
+3. Save and exit the file:
+    - Press `Ctrl + X` to initiate the save process.
+    - Press `Y` to confirm the save.
+    - Press `Enter` to save the modified buffer and exit.
     
-    4. Disable the password requirement for your current user by running the following command:
-        `sudo passwd -d \`whoami``
+4. Disable the password requirement for your current user by running the following command:
+    `sudo passwd -d \`whoami``
 
 #### Now go to https://go.dev/dl/ to find the latest linux version of golang.
 #### You want to find the version that ends with .linux-amd64.tar.gz.
