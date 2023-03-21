@@ -100,11 +100,16 @@ Now that you have successfully logged into your server, you're ready to begin co
 
 ### Step 6: Secure the SSH configuration
 
-6. `chmod -R go= ~/.ssh`
- 
-    `chown -R mainuser:mainuser ~/.ssh` 
+6. Secure your SSH configuration by setting the appropriate permissions, ownership, and updating the configuration file.
 
-    `sudo nano /etc/ssh/sshd_config`. Enter your user password (the one you were supposed to remember).
+        chmod -R go= ~/.ssh
+        chown -R mainuser:mainuser ~/.ssh
+        
+    Open the SSH configuration file with nano:
+    
+        `sudo nano /etc/ssh/sshd_config`
+        
+    Enter your user password (the one you were supposed to remember).
 
     Find and change the following lines:
 
