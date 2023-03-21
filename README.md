@@ -28,7 +28,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Disclaimer
 
-This guide is provided for educational and informational purposes only. Neither the author nor any associated parties can be held responsible for any losses, damages, or issues that may arise from following the instructions provided. By using this guide, you acknowledge that you are participating in the Avalanche network as a validator entirely at your own risk.
+This guide is provided for educational and informational purposes only, on an "as-is" basis, without any warranties or guarantees, either expressed or implied, regarding its accuracy, completeness, or effectiveness. The author does not claim to be an expert in the subject matter and has created this guide based on personal experience, research, and understanding. Users are encouraged to verify the information independently and consult additional sources.
+
+Neither the author nor any associated parties can be held responsible for any losses, damages, or issues that may arise from following the instructions provided. By using this guide, you acknowledge that you are participating in the Avalanche network as a validator entirely at your own risk.
 
 Setting up a cryptocurrency staking validator on the Avalanche network involves multiple steps, and the outcome can vary depending on your specific hardware, software, and network configurations. The author cannot guarantee that following this guide will result in a fully functional validator or ensure that you will receive staking rewards.
 
@@ -40,4 +42,6 @@ The Avalanche network may introduce new features, security patches, or performan
 
 Terms of Service Compliance: By following this guide, you agree to comply with any applicable terms of service, rules, or regulations associated with the Avalanche network and any relevant third-party services or platforms. The author and any associated parties take no responsibility for issues, losses, or damages that may arise due to violations of any terms of service. It is your responsibility to familiarize yourself with and adhere to these terms while participating in the Avalanche network as a validator.
 
-By following this guide, you agree to assume full responsibility for keeping your node updated and acknowledge that neither the author nor any associated parties will be held responsible for any issues that may arise. You also release the author and any associated parties from any liability. If you are uncertain about any steps or require further assistance, please consult the official Avalanche documentation or seek help from the community.
+By following this guide, you agree to assume full responsibility for keeping your node updated and acknowledge that neither the author nor any associated parties will be held responsible for any issues that may arise. You also release the author and any associated parties from any liability. If you are uncertain about any steps or require further assistance, please consult the official Avalanche documentation, seek help from the community, or consult a professional.
+
+The author will not be held liable for any errors, omissions, or inaccuracies in the guide or for any decisions made based on the information provided in the guide. Users are encouraged to seek professional advice or consult the official documentation and resources related to the subject matter, as the guide may not cover all aspects or may not be suitable for all users.
