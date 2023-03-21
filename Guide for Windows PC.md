@@ -119,7 +119,9 @@ Now that you have successfully logged into your server, you're ready to begin co
     Then press `Ctrl` + `x`, press `Y` to save the modified buffer, and then press `Enter` to write the file.
     
     Restart the SSH service to apply the changes:
+    
     `sudo systemctl restart ssh`
+    
     Your SSH configuration is now secured.
 
 ### Step 7: Set up the firewall
