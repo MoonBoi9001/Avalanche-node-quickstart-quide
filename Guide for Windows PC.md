@@ -298,7 +298,7 @@ Press `New SSH key` and then paste the .pub file contents into GitHub, set an ap
 
 ## Clone and build the AvalancheGo Github
 
-#### Step 1: Clone AvalancheGo Github
+### Step 1: Clone AvalancheGo Github
 
 1. Change directory to your GOPATH.
 
@@ -363,7 +363,7 @@ Run: `sudo journalctl -u avalanchego -f`
 
 ## Next day tasks (Or after bootstrappoing is complete which takes about 24 hours AFAIK) Very important!:
 
-#### Step 1: Check that bootstrapping is complete.
+### Step 1: Check that bootstrapping is complete.
 
 1.  You can check that bootstrapping is complete with the following health check.
 
@@ -377,7 +377,7 @@ Run: `sudo journalctl -u avalanchego -f`
 
 If bootstrapping is complete then one of the final outputs of the health check should be: `"healthy":true`.
 
-#### Step 2: Backup your staking keys.
+### Step 2: Backup your staking keys.
 
 1. Next you will NEED to backup your staking keys!!! (Very important!)
 2. Open a terminal window on your Windows PC by typing CMD into the windows searchbar and clicking on command prompt.
@@ -386,7 +386,7 @@ If bootstrapping is complete then one of the final outputs of the health check s
     Make sure to replace `mainuser` with whatever you called your login (if you followed my guide then you chose mainuser anyway so no need to change it), also make sure to replace `xxx.xxx.xxx.xxx` with your servers IP, also make sure to replace `avalanche_backup_todays_date` with the actual date e.g `avalanche_backup_21_03_2023`...
 4. Verify that your staker keys have been saved to the chosen directory on your Windows PC and I also strongly recommend saving them to a pen stick or removable storage device for extra safety. If your node is ever shutdown or goes wrong and you need to restore your NodeID on another server then you will need these files to restore the NodeID and retain your staking uptime. Avalanche requires a MINIMUM staking uptime of 80%+ (at time of writing) for rewards payout. 
 
-#### Step 3: Find your NodeID:
+### Step 3: Find your NodeID:
 
 1. Next you'll need to find out your NodeID. Run the command below from your linux server terminal cmder
 
@@ -404,7 +404,7 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
 
 #### Note: This is an incredibly important part of this guide. You will need to monitor your node for the duration of time you are staking. Failing to monitor your node is likely to lead to a rewards payout miss for you and your delegators. At the time of writing the required uptime for staking rewards is 80% and there is no slashing. Non-default subnets may have different requirements to the C/X/P chains. It's your responsibility to be aware of the full requirements to recieve staking rewards and your responsibility to research the full risks involved for validating any subnets. 
 
-#### Step 1: How to monitor your node. 
+### Step 1: How to monitor your node. 
 
 1. Firstly, you can do a health check when logged into your server by entering the following into the terminal:
     
@@ -445,7 +445,7 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
 8. I suggest you bookmark the links in steps 4 to 7 inclusive, with your NodeID entered to each, so you can quickly and easily check your node performance. It is not sufficient to only use 1 provider.  
 
 
-#### Step 2: How to update your node when new versions come out
+### Step 2: How to update your node when new versions come out
 
 1. If you have the installer script configured (you should if you followed this guide) then you can run:
 
@@ -497,7 +497,7 @@ Now go back to the [node monitoring sites above](https://github.com/MoonBoi9001/
 
 Lets imagine your node has gone offline and you are now trying to restore your staking keys to a fresh node, then the process you would follow is as follows: (bear in mind you should only have your stakeing keys active on 1 node at a time to prevent potential network conflicts).
 
-#### Step 1: 
+### Step 1: 
 1. Open up a windows terminal by typing `cmd` into the windows search and clicking to open command prompt.
 
 3. Type the following 3 lines of code into your terminal, make sure to replace `{your username}`, `{backup date}`, `mainuser` and `xxx.xxx.xxx.xxx` with the actual values that reflect your circumstances. (you may have to edit the full directory path if your staking keys are saved elsewhere. This will use SSH to copy and paste your staking keys from the directory where they are saved to a temporary directory on your server.
