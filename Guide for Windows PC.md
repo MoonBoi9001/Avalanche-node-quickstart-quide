@@ -130,22 +130,30 @@ Now that you have successfully logged into your server, you're ready to begin co
 
     `sudo apt install ufw`
     
-    `sudo ufw allow 2222`. If your IP is fixed, or you use a VPN then you can change this to `sudo ufw allow 2222 from {IP}`, this is more secure. Although if your IP changes in the future then you will have to update the firewall from your server dashboard, as you wont be able to login via ssh with an alternative IP.
+    `sudo ufw allow 2222`. If your IP is fixed, or you use a VPN then you can change this to `sudo ufw allow 2222 from {IP}`, this is more secure and limits the attack surface of a DDOS attack, so it is strongly advised, although technically not strictly nescessary. If your fixed IP changes in the future, then you will have to update the firewall from your server dashboard, as you wont be able to login via SSH from an IP that has not been whitelisted. 
     
-    `sudo ufw allow 9651`. Do not change this.
+    `sudo ufw allow 9651`. Do not change this. Port 9651 must remain open at all times for your Avalanche node to communicate with other nodes on the Avalanche network. 
     
     `sudo ufw enable`. Press `y` to proceed.
     
     `sudo ufw status numbered`. You should see that the ports 2222 and 9651 are open and accessible. We will be using port 2222 for SSH. Port 22 should not be open. If port 22 is open then you can close it. `sudo ufw delete allow 22`
     
-### Step 8: Set up the firewall
+### Step 8: Configure sudo privileges
+    1. Open the sudoers file for editing by running the following command:
     
-# sudo visudo
-#### Enter the following line:
-# mainuser ALL=(ALL) NOPASSWD:ALL
-#### I think you can enter the above line anywhere, but i put it under the "# user privilege specification" section.
-#### Save the file with Crtl + x, then press Y, then enter to save the modified buffer.
-# sudo passwd -d \`whoami`
+    `sudo visudo`
+    
+    2. Add the following line to grant your user sudo privileges without a password:
+    
+        mainuser ALL=(ALL) NOPASSWD:ALL
+        
+    3. Save and exit the file:
+        - Press `Ctrl + X` to initiate the save process.
+        - Press `Y` to confirm the save.
+        - Press `Enter` to save the modified buffer and exit.
+    
+    4. Disable the password requirement for your current user by running the following command:
+        `sudo passwd -d \`whoami``
 
 #### Now go to https://go.dev/dl/ to find the latest linux version of golang.
 #### You want to find the version that ends with .linux-amd64.tar.gz.
