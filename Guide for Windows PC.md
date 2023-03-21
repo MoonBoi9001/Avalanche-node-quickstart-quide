@@ -215,6 +215,7 @@ Now you have completed the configuration process, you can download and install G
 1. Go to https://go.dev/dl/ to find the latest Linux version of Golang. You want to find the version that ends with `.linux-amd64.tar.gz`. At the time of writing, the latest version is `go1.20.2.linux-amd64.tar.gz`. Copy the version name `go1.20.2.linux-amd64.tar.gz`, or the latest version available when you check. Then change the first two lines of code below to account for the latest version and enter them into your Cmder terminal:
 
     Run: `wget -c https://golang.org/dl/go1.20.2.linux-amd64.tar.gz`
+    
     Run: `sudo tar -C /usr/local -xvzf go1.20.2.linux-amd64.tar.gz`
 
 2. Take ownership of the `/usr/local/go` directory
