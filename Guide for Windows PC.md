@@ -74,19 +74,28 @@ Once your server has finished being configured, it should appear in the `Server 
 
 ## Beginning configuration of your server.
 
-Now that you have successfully logged into your server you're ready to begin configuration. Below I've listed the code required to setup your node and a brief explanation of what each line does. You should follow this configuration guide sequentially starting from the top (where you are reading currently) and working down. Entering the code out of order may result in failure to setup the node. It's recommended that you read the explanation of the code before you enter it into your server so you are aware of what each line performs. 
+Now that you have successfully logged into your server, you're ready to begin configuration. The following steps will guide you through setting up your node. Make sure to follow the steps sequentially, as entering the code out of order may result in a failure to set up the node. It's recommended that you read the explanation of the code before entering it into your server so you are aware of what each line performs.
 
-1. `sudo apt update && sudo apt upgrade`. After entering, press `Y` (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process, you don't need to restart any more processes than recommended, simply press `Enter`.
+### Step 1: Update the package list and installed packages
 
-The above line updates the package list and the installed packages to the latest versions.
+1. `sudo apt update && sudo apt upgrade`. After entering, press `Y` (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process. You don't need to restart any more processes than recommended; simply press `Enter`.
 
-2. `sudo adduser mainuser`. After entering, set a new password, doesn't really matter what you set it to as you won't use it, just make it sufficiently complex so its not hacked before you disable password login (make sure to rememer it though!!!). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
+### Step 2: Create a non root user account
 
-The above line will create a new user account on your server called "mainuser", if you don't want to name your user account mainuser, then change the code accordingly.
+2. `sudo adduser mainuser`. After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
+
+### Step 3: Add the non root user to the sudo group
+
+`usermod -aG sudo mainuser`
+
+### Step 4: Log out of your server and log back in as the new user
+
+Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address:
+`ssh mainuser@{ip}`
 
 
-# usermod -aG sudo mainuser
-#### The above line adds the user you created "mainuser" to the list of accounts that can do sudo commands.
+
+
 #### Log out of your server by closing cmder.
 #### Relaunch cmder.
 
