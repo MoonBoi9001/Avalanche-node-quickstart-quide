@@ -89,11 +89,24 @@ Enter your secure passphrase for your SSH keypair when prompted.
 
 Now that you have successfully logged into your server, you're ready to begin configuration. The following steps will guide you through setting up your node. Make sure to follow the steps sequentially, as entering the code out of order may result in a failure to set up the node. It's recommended that you read the explanation of the code before entering it into your server so you are aware of what each line performs.
 
+
+#### Step 1: Update the package list and installed packages
+
+1. `sudo apt update && sudo apt upgrade`. After entering, press `Y` (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process. You don't need to restart any more processes than recommended; simply press `Enter`.
+
+
 ### Step 1: Update the package list and installed packages
 
 Run: `sudo apt update && sudo apt upgrade`
 
 After entering, press `Y` (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process. You don't need to restart any more processes than recommended; simply press `Enter`.
+
+
+#### Step 2: Create a non root user account
+
+1. `sudo adduser mainuser`. After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
+
+
 
 ### Step 2: Create a non-root user account
 
@@ -101,13 +114,31 @@ Run: `sudo adduser mainuser`
 
 After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
 
+#### Step 3: Add the non root user to the sudo group
+
+1. `usermod -aG sudo mainuser`
+
+
+
 ### Step 3: Add the non-root user to the sudo group
 
 Run: `usermod -aG sudo mainuser`
 
+#### Step 4: Log out of your server and log back in as the new user
+
+1. Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address `ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
+
+
 ### Step 4: Log out of your server and log back in as the new user
 
 Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address: `ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
+
+#### Step 5: Configure SSH key-based authentication for the new user
+
+1. First make a new SSH directory in your server `mkdir -p ~/.ssh`. Then, from your windows file explorer, open the `id_rsa.pub` file in your SSH directory (`C:/Users/{enter your username here}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your server. Type `echo {public_key_string} >> ~/.ssh/authorized_keys` but make sure to replace `{public_key_string}` with your entire SSH public key string that you copied from Notepad.
+
+2. Verify the above line worked with the following command, which will show your public SSH key: `nano /home/mainuser/.ssh/authorized_keys` If you can see your public SSH key then you have completed the step successfully. Close the Nano text editor by pressing `CTRL` + `X`.
+
 
 ### Step 5: Configure SSH key-based authentication for the new user
 
@@ -148,45 +179,6 @@ Close Cmder, then relaunch it and enter the following command, replacing `{ip}` 
     -
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Now that you have successfully logged into your server, you're ready to begin configuration. The following steps will guide you through setting up your node. Make sure to follow the steps sequentially, as entering the code out of order may result in a failure to set up the node. It's recommended that you read the explanation of the code before entering it into your server so you are aware of what each line performs.
 
 #### Step 1: Update the package list and installed packages
 
