@@ -122,6 +122,11 @@ Now that you have successfully logged into your server, you're ready to begin co
     - PasswordAuthentication no
     - PermitEmptyPasswords yes
 
+    - `PermitRootLogin yes`
+    - `PubkeyAuthentication yes`
+    - `PasswordAuthentication no`
+    - `PermitEmptyPasswords yes`
+
 4. Save and exit the file:
     - Press `Ctrl + X` to initiate the save process.
     - Press `Y` to confirm the save.
