@@ -86,35 +86,31 @@ Now that you have successfully logged into your server, you're ready to begin co
 
 ### Step 3: Add the non root user to the sudo group
 
-`usermod -aG sudo mainuser`
+3. `usermod -aG sudo mainuser`
 
 ### Step 4: Log out of your server and log back in as the new user
 
-Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address:
-`ssh mainuser@{ip}`
+4. Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address:
 
+`ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember).
 
+If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
 
+### Step 5: Configure SSH key-based authentication for the new user
 
-#### Log out of your server by closing cmder.
-#### Relaunch cmder.
+`mkdir -p ~/.ssh`
 
-# ssh mainuser@{ip}
-#### Press enter to skip ssh passphrase.
-#### Enter your newly created main user password (the one you were supposed to remember).
-#### If you take too long then it may say "Connection closed by '{ip}' port 22", just try again but do it faster this time.
+Open the `id_rsa.pub` file in your SSH directory on your Windows PC (`C:/Users/{enter your username here}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your new Hetzner server. 
 
-# mkdir -p ~/.ssh
-#### Open the id_rsa.pub file in your ssh directoy C:/Users/{enter your username here}/.ssh using notepad and then copy the ENTIRE contents of the file.
-#### Once the public key string is copied go back to cmder where you are logged into your new hetzner server.
+`echo {public_key_string} >> ~/.ssh/authorized_keys` Replace `{public_key_string}` with your entire SSH public key string that you copied from Notepad. Accept the warning message that the long text may make the console non-responsive.
 
-# echo {public_key_string} >> ~/.ssh/authorized_keys
-#### Make sure to replace "{public_key_string}" with your ENTIRE ssh public key string that you coped from notepad.
-#### Accept the warning message that the long text may make the console non-responsive.
+Verify the above line worked with the following command, which will show your key:
 
-#### Verify the above line worked with the following where you will see your key:
-# nano /home/mainuser/.ssh/authorized_keys
-#### If you can see your SSH key then you completed the step successfully, close nano text editor by pressing CTRL + X.
+`nano /home/mainuser/.ssh/authorized_keys`
+
+If you can see your SSH key, you completed the step successfully. Close the Nano text editor by pressing `CTRL` + `X`.
+
+### Step 6: Secure the SSH configuration
 
 # chmod -R go= ~/.ssh
 # chown -R mainuser:mainuser ~/.ssh
