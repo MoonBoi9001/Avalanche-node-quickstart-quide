@@ -74,11 +74,13 @@ Once your server has finished being configured, it should appear in the `Server 
 
 ## Beginning configuration of your server.
 
-Now that you have successfully logged into your server you're ready to begin configuration. Below I've listed the code required to setup your node and a brief explanation of what each line does. You should follow this configuration guide sequentially starting from the top and working down. Entering the code out of order may result in failure to setup the node. 
+Now that you have successfully logged into your server you're ready to begin configuration. Below I've listed the code required to setup your node and a brief explanation of what each line does. You should follow this configuration guide sequentially starting from the top (where you are reading currently) and working down. Entering the code out of order may result in failure to setup the node. 
 
-`sudo apt update && sudo apt upgrade`
+1. `sudo apt update && sudo apt upgrade`. After entering press `Y` (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process, you don't need to restart any more processes than recommended, simply press `Enter`.
 
 The above line updates the package list and the installed packages to the latest versions.
+
+2. 
 #### Y (to continue) and may also need to press okay a few times during the configuration process, you don't need to restart any more processes than recommended, just press enter.
 
 # sudo adduser mainuser
