@@ -465,9 +465,13 @@ Note: You will have to overwrite those files to get your prior NodeID back.
 8. You should see that 9651 is open along with the SSH port (we are using port 2222 in this guide), if it isn't then do:
 
     `sudo ufw allow 9651`
+    
     `sudo ufw allow 2222`
+    
     `sudo ufw disable`
+    
     `sudo ufw enable`
+    
     `sudo ufw status numbered`
     
 You should now see that both the SSH port (2222) and 9651 are open. 
