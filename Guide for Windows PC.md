@@ -102,25 +102,30 @@ Now that you have successfully logged into your server, you're ready to begin co
 
 6. `chmod -R go= ~/.ssh`
  
-`chown -R mainuser:mainuser ~/.ssh` 
+    `chown -R mainuser:mainuser ~/.ssh` 
 
-`sudo nano /etc/ssh/sshd_config` Enter your created main user password (the one you were supposed to remember). 
+    `sudo nano /etc/ssh/sshd_config`. Enter your user password (the one you were supposed to remember).
 
 Find and change the following lines:
 
-`PermitRootLogin yes`
+    `PermitRootLogin yes`
 
-`PubkeyAuthentication yes`
+    `PubkeyAuthentication yes`
 
-`PasswordAuthentication no`
+    `PasswordAuthentication no`
 
-`PermitEmptyPasswords yes`
+    `PermitEmptyPasswords yes`
 
 Then press `Ctrl` + `x`, press `Y` to save the modified buffer, and then press `Enter` to write the file.
 
-`sudo systemctl restart ssh`
+    `sudo systemctl restart ssh`
 
 ### Step 7: Set up the firewall
+
+`sudo apt install ufw`
+`sudo ufw allow 2222`
+`sudo ufw allow 9651`
+`sudo ufw enable`
 
 # sudo systemctl restart ssh
 # sudo apt install ufw
