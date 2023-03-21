@@ -441,7 +441,7 @@ Lets imagine your node has gone offline and you are now trying to restore your s
     - `mv /home/mainuser/temp/staker.crt /home/mainuser/.avalanchego/staking/`
     - `mv /home/mainuser/temp/staker.key /home/mainuser/.avalanchego/staking/`
     - `mv /home/mainuser/temp/signer.key /home/mainuser/.avalanchego/staking/`
-    - 
+
 Note: You will have to overwrite those files to get your prior NodeID back.
 
 4. Next you can delete the temp folder:
