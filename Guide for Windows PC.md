@@ -318,13 +318,14 @@ If bootstrapping is complete then one of the final outputs of the health check s
 
 1. Next you'll need to find out your NodeID. Run the command below from your linux server terminal cmder
 
-
+    ```
     curl -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
     "method" :"info.getNodeID"
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/info
-
+    ```
+    
 Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy99r9mJt`. This ID is sharable to your friends if they want to delegate AVAX tokens to your node. You'll need this NodeID in order to stake your AVAX.
 
 ## How to update and monitor your node.
@@ -333,11 +334,13 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
 
 1. Firstly, you can always do a health check:
     
+    ```
     curl -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
     "method" :"health.health"
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
+    ```
 
 Every so often a new version of AvalancheGo will come out. Be sure to follow the public Avalanche Announcements on Discord, Telegram and Twitter:
 
@@ -400,20 +403,17 @@ curl -X POST --data '{
 # You can also check uptime:
 
 
-```python
-curl -X POST --data '{
+    ```
+    curl -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
     "method" :"info.uptime"
-}' -H 'content-type:application/json;' 127.0.0.1:9650/ext/info
-```
+    }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/info
+    ```
 
 #### Now go back to the node monitoring sites above (AllNodes/VScout are usually the fastest to update in my experience) and check your node has updated to the latest revision
 
 
-```python
-
-```
 
 # You are now finished with this guide. If you need any further help I reccomend going to the Avalanche discord (please be careful of scammers pretending to be from the Avalanche team that are reaching out to you in your Direct/Private messages)
 #### Relevant Discord Channels below:
@@ -421,9 +421,7 @@ curl -X POST --data '{
 #### https://discord.com/channels/578992315641626624/757576823570825316
 
 
-```python
 
-```
 
 # How to restore your Node-ID from backed up staking keys:
 
@@ -457,8 +455,3 @@ curl -X POST --data '{
 # sudo ufw enable
 # sudo ufw status numbered
 #### You should now see that both the SSH port and 9651 are open. 
-
-
-```python
-
-```
