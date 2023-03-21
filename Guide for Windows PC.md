@@ -153,7 +153,7 @@ Now that you have successfully logged into your server, you're ready to begin co
     - Press `Enter` to save the modified buffer and exit.
     
 4. Disable the password requirement for your current user by running the following command:
-    `sudo passwd -d \`whoami``
+    `sudo passwd -d $(whoami)`
 
 #### Now go to https://go.dev/dl/ to find the latest linux version of golang.
 #### You want to find the version that ends with .linux-amd64.tar.gz.
