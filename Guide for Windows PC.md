@@ -130,13 +130,13 @@ Now that you have successfully logged into your server, you're ready to begin co
 
     `sudo apt install ufw`
     
-    `sudo ufw allow 2222`. If your IP is fixed, or you use a VPN then you can change this to `sudo ufw allow 2222 from {IP}`, this is more secure. Although if your IP changes in the future then you will have to update the firewall from your [server dashboard](https://robot.hetzner.com/server?sortcol=id&sorttype=down)
+    `sudo ufw allow 2222`. If your IP is fixed, or you use a VPN then you can change this to `sudo ufw allow 2222 from {IP}`, this is more secure. Although if your IP changes in the future then you will have to update the firewall from your server dashboard, as you wont be able to login via ssh with an alternative IP.
     
     `sudo ufw allow 9651`. Do not change this.
     
     `sudo ufw enable`. Press `y` to proceed.
     
-    `sudo ufw status numbered`. You should see that the ports 2222 and 9651 are open and accessible. We will be using port 2222 for SSH.
+    `sudo ufw status numbered`. You should see that the ports 2222 and 9651 are open and accessible. We will be using port 2222 for SSH. Port 22 should not be open. If port 22 is open then you can close it. `sudo ufw delete allow 22`
     
 ### Step 8: Set up the firewall
     
