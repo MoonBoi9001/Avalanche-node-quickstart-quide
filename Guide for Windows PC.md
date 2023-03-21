@@ -116,9 +116,18 @@ Now that you have successfully logged into your server, you're ready to begin co
         PubkeyAuthentication yes
         PasswordAuthentication no
         PermitEmptyPasswords yes
-    Then press `Ctrl` + `x`, press `Y` to save the modified buffer, and then press `Enter` to write the file.
+        
+    - PermitRootLogin yes
+    - PubkeyAuthentication yes
+    - PasswordAuthentication no
+    - PermitEmptyPasswords yes
+
+4. Save and exit the file:
+    - Press `Ctrl + X` to initiate the save process.
+    - Press `Y` to confirm the save.
+    - Press `Enter` to save the modified buffer and exit.
     
-4. Restart the SSH service to apply the changes:
+5. Restart the SSH service to apply the changes:
     
     `sudo systemctl restart ssh`
     
