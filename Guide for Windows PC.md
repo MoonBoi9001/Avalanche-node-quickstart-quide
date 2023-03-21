@@ -166,47 +166,63 @@ Now that you have successfully logged into your server, you're ready to begin co
 
     `sudo passwd -d $(whoami)`
 
-## Setting up your configured server to validate Avalanche. 
+## Download `Go` onto your configured server. 
 
-Now you have completed the configuration process (congrats!) you can begin setting up your server for validation.
+Now you have completed the configuration process you can download and install `Go` which you will need for your node to validate the Avalanche network.
 
-### Step 1: 
+### Step 1: Download & Install the latest Go version
 
-#### Now go to https://go.dev/dl/ to find the latest linux version of golang.
-#### You want to find the version that ends with .linux-amd64.tar.gz.
-#### At the time of writing the latest version is go1.20.2.linux-amd64.tar.gz.
-#### Copy this version name "go1.20.2.linux-amd64.tar.gz", or the latest version available when you check.
-#### Change the following two lines of code to account for the latest verison, then enter them into your cmder server connection:
-# wget -c https://golang.org/dl/go1.20.2.linux-amd64.tar.gz
-# sudo tar -C /usr/local -xvzf go1.20.2.linux-amd64.tar.gz
-# sudo chown -R mainuser:mainuser /usr/local/go
+1. Go to https://go.dev/dl/ to find the latest linux version of golang. You want to find the version that ends with `.linux-amd64.tar.gz`. At the time of writing, the latest version is `go1.20.2.linux-amd64.tar.gz`. Copy the version name `go1.20.2.linux-amd64.tar.gz`, or the latest version available when you check. Then change the first two lines of code below to account for the latest verison and enter them into your Cmder terminal:
 
-# mkdir -p ~/go_projects/{bin,src,pkg}
-# cd ~/go_projects
-# ls
-#### Uou should now see the 3 folders you just created :).
-# nano ~/.profile
-#### Add the following following lines to the nano file without the "#" on each line (you can paste them above the line that says #if running bash):
+    - `wget -c https://golang.org/dl/go1.20.2.linux-amd64.tar.gz`
+    - `sudo tar -C /usr/local -xvzf go1.20.2.linux-amd64.tar.gz`
 
+2. Take ownership of the `/usr/local/go` directory
 
-```python
-#export GOPATH=$HOME/go
-#export PATH=$PATH:$GOPATH/bin
-#export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
-#export PATH=$PATH:/usr/local/go/bin
-#export GOPATH="$HOME/go_projects"
-#export GOBIN="$GOPATH/bin"
-```
+    `sudo chown -R mainuser:mainuser /usr/local/go`
+    
+3. Make 3 new folders isnide the `/usr/local/go` directory
+    
+    `mkdir -p ~/go_projects/{bin,src,pkg}`
 
-#### Press okay to continue the multiline paste. Then remove all the #'s from the paste.
-#### Press Ctrl + x, press y, press enter.
+### Step 2: Setup your enviroment vairables:
 
-# . ~/.profile
+1. Use a text editor such as nano to open the `.profile` file so you can configure enviroment vairables.
 
-# echo $PATH
+    `nano ~/.profile`
+    
+    
+2. Add the following following lines to the file (you can paste them above the line that says #if running bash):
 
-# go version
-#### Should print out the version of go you downloaded if you have completed the above steps successfully, if not then check the steps above again
+        export GOPATH=$HOME/go
+        export PATH=$PATH:$GOPATH/bin
+        export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
+        export PATH=$PATH:/usr/local/go/bin
+        export GOPATH="$HOME/go_projects"
+        export GOBIN="$GOPATH/bin"
+        
+3. Save and exit the file:
+    - Press `Ctrl + X` to initiate the save process.
+    - Press `Y` to confirm the save.
+    - Press `Enter` to save the modified buffer and exit.
+
+4. Reload the `.profile` file to apply the changes:
+
+    `. ~/.profile`
+    
+5. Verify that the environment variables are set correctly:
+    - Check the updated `PATH` variable:
+        ```
+        echo $PATH
+        ```
+        This command displays the content of the `PATH` environment variable, ensuring that the Go-related paths have been added successfully.
+
+    - Verify the installed Go version:
+        ```
+        go version
+        ```
+        This command prints the version of Go installed on your system. If the output shows the expected Go version, it indicates that the environment variables have been configured correctly. If not, double-check the previous steps.
+
 
 #### Now you need to link your github account with your server via SSH so you can download avalanchego from github, follow the steps below
 
