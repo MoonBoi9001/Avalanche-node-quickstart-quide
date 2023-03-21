@@ -423,35 +423,51 @@ Now go back to the [node monitoring sites above](https://github.com/MoonBoi9001/
 
 
 
-# How to restore your Node-ID from backed up staking keys:
+## How to restore your NodeID from backed up staking keys:
 
-#### Lets imagine your node has gone offline and you are now trying to restore your staker keys to a fresh node, then the process you would follow is as follows: (bear in mind you can only have your staker keys active on 1 node at a time. If you have them on multiple nodes then I have no idea what will happen but I don't think it's good)
-#### Open up a windows terminal by typing cmd into the windows search and clicking to open command prompt
-#### Type the following 3 lines of code into your terminal, make sure to replace {your username}, {backup date}, mainuser and xxx.xxx.xxx.xxx with the actual values that reflect your circumstances.
-# scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/staker.crt mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp
-# scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/staker.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp
-# scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/signer.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp
-#### Now you have copied our staking keys onto a temporary file in your server you'll need to move them to the staking directory from within the server. Open up cmder and log into your server then type:
-# mv /home/mainuser/temp/staker.crt /home/mainuser/.avalanchego/staking/
-# mv /home/mainuser/temp/staker.key /home/mainuser/.avalanchego/staking/
-# mv /home/mainuser/temp/signer.key /home/mainuser/.avalanchego/staking/
-#### You will have to overwrite those files to get your NodeID back then you can delete the temp folder:
-# rm -r /home/mainuser/temp
+Lets imagine your node has gone offline and you are now trying to restore your staking keys to a fresh node, then the process you would follow is as follows: (bear in mind you should only have your stakeing keys active on 1 node at a time to prevent potential network conflicts).
 
-#### after restoring staker keys do the following:
+### Step 1: 
+1. Open up a windows terminal by typing `cmd` into the windows search and clicking to open command prompt.
 
-# sudo systemctl stop avalanchego
-# sudo systemctl start avalanchego
+3. Type the following 3 lines of code into your terminal, make sure to replace `{your username}`, `{backup date}`, `mainuser` and `xxx.xxx.xxx.xxx` with the actual values that reflect your circumstances. (you may have to edit the full directory path if your staking keys are saved elsewhere. This will use SSH to copy and paste your staking keys from the directory where they are saved to a temporary directory on your server.
 
-#### check system running
+    - `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/staker.crt mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
+    - `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/staker.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
+    - `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/signer.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
 
-# sudo systemctl status avalanchego
-#### make sure port 9651 is opon, if you have UFW installed (you will if you followed this guide) then type.
-# sudo ufw status numbered
-#### You should see that 9651 is open along with the SSH port, if it isn't then do:
-# sudo ufw allow 9651
-# sudo ufw allow ssh
-# sudo ufw disable
-# sudo ufw enable
-# sudo ufw status numbered
-#### You should now see that both the SSH port and 9651 are open. 
+3. Now you have copied our staking keys onto a temporary directory in your server you'll need to move them to the staking directory from within the server. Open up Cmder and log into your server then type:
+
+    - `mv /home/mainuser/temp/staker.crt /home/mainuser/.avalanchego/staking/`
+    - `mv /home/mainuser/temp/staker.key /home/mainuser/.avalanchego/staking/`
+    - `mv /home/mainuser/temp/signer.key /home/mainuser/.avalanchego/staking/`
+    - 
+Note: You will have to overwrite those files to get your prior NodeID back.
+
+4. Next you can delete the temp folder:
+
+    `rm -r /home/mainuser/temp`
+
+5. Your Staking keys should now be restored onto your server. Now you'll need to restart the Avalanchego process:
+
+    `sudo systemctl stop avalanchego`
+    
+    `sudo systemctl start avalanchego`
+
+6. Check the system process is running:
+
+    `sudo systemctl status avalanchego`
+    
+7. Make sure port 9651 is open, if you have UFW installed (you will if you followed this guide) then type.
+
+    `sudo ufw status numbered`
+    
+8. You should see that 9651 is open along with the SSH port (we are using port 2222 in this guide), if it isn't then do:
+
+    `sudo ufw allow 9651`
+    `sudo ufw allow 2222`
+    `sudo ufw disable`
+    `sudo ufw enable`
+    `sudo ufw status numbered`
+    
+You should now see that both the SSH port (2222) and 9651 are open. 
