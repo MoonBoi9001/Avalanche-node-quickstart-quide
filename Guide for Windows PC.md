@@ -397,11 +397,11 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
     
 2. Give the prior step a few mins first (suggested 3-5 mins) and then do a health check.
 
-    curl -X POST --data '{
-    "jsonrpc":"2.0",
-    "id"     :1,
-    "method" :"health.health"
-    }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
+        curl -X POST --data '{
+        "jsonrpc":"2.0",
+        "id"     :1,
+        "method" :"health.health"
+        }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
 
 You can also check uptime:
 
