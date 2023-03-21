@@ -44,14 +44,14 @@ If you don't have any files or the `.ssh` directory doesn't exist, follow these 
 12. Go back to the original directory: `C:/Users/{your_username}/.ssh/{your_folder_name}`
 13. Open the file named `id_rsa.pub` in Notepad and then minimize Notepad. You will come back to it later. You can close the File Explorer now.
 
-# Guide starts here if you have completed the prerequsites 
+# Guide starts here if you have completed the prerequisites 
 
 ## Registering your server
 
 #### 1. Purchase AX41-NVME on Hetzner
 
 Start by purchasing an AX41-NVME server on Hetzner in Germany or Finland, keeping in mind any one-time setup fees: [Hetzner AX41-NVME Configurator](https://www.hetzner.com/dedicated-rootserver/ax41-nvme/configurator#/)
-- Keep the option "Primary IPv4" checked and selected, as you will need it.
+- Keep the option `Primary IPv4` checked and selected, as you will need it.
 - Select the latest version of Ubuntu LTS (at the time of writing, this is Ubuntu 22.04.1 LTS (base)).
 - Optionally consider upgrading to ECC RAM near the bottom of the order page (not required).
 
@@ -65,12 +65,19 @@ Save and complete your order. You may have to wait up to a few hours until the s
 
 ## Logging into your server
 
-Once your server has finished being configured, it should appear in the `Server ID` section of the Hetzner Robot dashboard (https://robot.hetzner.com/server). For example, you might see `AX41-NVMe #1871660`.
+Once your server has finished being configured, it should appear in the `Server ID` section of the [Hetzner Robot dashboard](https://robot.hetzner.com/server). For example, you might see `AX41-NVMe #1871660`.
 
-1. Click on your Server's ID and then copy the IP address. You can make a note of the IP somewhere for future reference, or you can always find it using the link provided above.
-2. Launch `Cmder.exe`, and type `ssh root@{IP}`. Make sure to replace "`{IP}`" with the IP address of your server that you copied from the link above.
-3. Your Linux terminal emulator will now connect to your server and prompt you to trust the key fingerprint. This will only be asked once, during the initial setup. Type `yes` and press Enter.
-4. Enter your secure passphrase for your SSH keypair when prompted.
+### Step 1: Find your server's IP address
+Click on your Server's ID and then copy the IP address. You can make a note of the IP somewhere for future reference, or you can always find it using the link provided above.
+
+### Step 2: Connect to your server using Cmder
+Launch `Cmder.exe`, and type `ssh root@{IP}`. Make sure to replace "`{IP}`" with the IP address of your server that you copied from the link above.
+
+### Step 3: Trust the key fingerprint
+Your Linux terminal emulator will now connect to your server and prompt you to trust the key fingerprint. This will only be asked once, during the initial setup. Type `yes` and press Enter.
+
+### Step 4: Enter your secure passphrase
+Enter your secure passphrase for your SSH keypair when prompted.
 
 ## Beginning configuration of your server.
 
