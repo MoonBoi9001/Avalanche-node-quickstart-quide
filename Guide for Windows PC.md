@@ -263,70 +263,76 @@ Now you have completed the configuration process, you can download and install G
 
         This command prints the version of Go installed on your system. If the output shows the expected Go version, it indicates that the environment variables have been configured correctly. If not, double-check the previous steps.
 
-## Link your Github account with your server via SSH.
+## Link your Github account with your server via SSH
 
-Now you need to link your github account with your server via SSH so you can download AvalancheGo from Github.
+Now you need to link your GitHub account with your server via SSH so you can download AvalancheGo from GitHub.
 
-#### Step 1: Open your SSH directory and generate a SSH key pair.
+### Step 1: Open your SSH directory and generate an SSH key pair
 
-`cd /home/mainuser/.ssh`
+Run: `cd /home/mainuser/.ssh`
 
-`ssh-keygen -t ed25519 -C your_github_email@example.com` Make sure to replace `your_github_email@example.com` with your actual Github account email. You can find your github email at the following link: [Github](https://github.com/settings/emails)
-    
-- Press `Enter` to accept default file save location.
+Run: `ssh-keygen -t ed25519 -C your_github_email@example.com`
+
+Make sure to replace `your_github_email@example.com` with your actual GitHub account email. You can find your GitHub email at the following link: [GitHub](https://github.com/settings/emails)
+
+- Press `Enter` to accept the default file save location.
 - Enter a secure passphrase if desired.
-    
-#### Step 2: Copy your SSH public key.
+
+### Step 2: Copy your SSH public key
 
 The next line of code will show the new SSH keys.
 
-`ls -al ~/.ssh`
+Run: `ls -al ~/.ssh`
 
-`nano ~/.ssh/id_ed25519.pub`
+Run: `nano ~/.ssh/id_ed25519.pub`
 
-Copy the ENTIRE contents of the .pub file to windows clipboard, do this simply by highlighting the text and it will auto copy.
-    
-Press `Ctrl + x`, you should not need to press y or enter as you have not modified the file.
-    
-#### Step 2: Paste your SSH key into Github.
+Copy the ENTIRE contents of the .pub file to the Windows clipboard, do this simply by highlighting the text and it will auto copy.
 
-Now go to the [Github SSH Key Page](https://github.com/settings/keys)
+Press `Ctrl + X`, you should not need to press Y or Enter as you have not modified the file.
 
-Press `New SSH key` and then paste the .pub file contents into Github, set a appropriate title e.g `AVAX Server AX41-NVME` and click `save`.
+### Step 3: Paste your SSH key into GitHub
 
-#### Step 3: Clone and build the AvalancheGo Github
+Now go to the [GitHub SSH Key Page](https://github.com/settings/keys)
+
+Press `New SSH key` and then paste the .pub file contents into GitHub, set an appropriate title e.g., `AVAX Server AX41-NVME` and click `Save`.
+
+## Clone and build the AvalancheGo Github
+
+#### Step 1: Clone AvalancheGo Github
 
 1. Change directory to your GOPATH.
 
-    `cd $GOPATH`
+Run: `cd $GOPATH`
     
 2. Make a directory for ava-labs.
 
-    `mkdir -p src/github.com/ava-labs`
+Run: `mkdir -p src/github.com/ava-labs`
     
 3. Change directory to newly created ava-labs directory.
     
-    `cd src/github.com/ava-labs`
+Run: `cd src/github.com/ava-labs`
     
 4. Clone the Ava-Labs Github Repo to this directory.
     
-    `git clone git@github.com:ava-labs/avalanchego.git `
+Run: `git clone git@github.com:ava-labs/avalanchego.git `
 
     Accept the key fingerprint and continue connection with `yes`. Then enter your passphrase for your SSH key if you created one.
     
 5. Change directory to newly created ava-labs directory.
 
-    `cd avalanchego`
+Run: `cd avalanchego`
+
+### Step 2: Build the AvalancheGo Github
     
-6. Install & build the directory.
+1. Install & build the directory.
     
-    `sudo apt-get install build-essential`
+Run: `sudo apt-get install build-essential`
     
     Press `Y`, then press `Enter` twice when prompted.
     
-    `./scripts/build.sh`
+Run: `./scripts/build.sh`
 
-7. Run the installer script.
+2. Run the installer script.
 
         wget -nd -m https://raw.githubusercontent.com/ava-labs/avalanche-docs/master/scripts/avalanchego-installer.sh;\
         chmod 755 avalanchego-installer.sh;\
@@ -340,15 +346,15 @@ Press `New SSH key` and then paste the .pub file contents into Github, set a app
 
     Type `private` then type `on` to turn on state sync (unless you NEED the historical data, TIP: most don't).
 
-8. Check everything is working as intended.
+3. Check everything is working as intended.
 
-    `sudo systemctl status avalanchego`
+Run: `sudo systemctl status avalanchego`
 
     The above line should show `active (running)`, if it does then just press `q` and then exit the server, give it a day or so to finish bootstrapping.
 
-9. Check system output:
+4. Check system output:
 
-    `sudo journalctl -u avalanchego -f`
+Run: `sudo journalctl -u avalanchego -f`
 
     This line enables to to read the system output and see when bootstrapping is nearly finished.
 
