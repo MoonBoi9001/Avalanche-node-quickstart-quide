@@ -138,6 +138,12 @@ Now that you have successfully logged into your server, you're ready to begin co
     
     `sudo ufw status numbered`. You should see that the ports 2222 and 9651 are open and accessible. We will be using port 2222 for SSH. Port 22 should not be open. If port 22 is open then you can close it. `sudo ufw delete allow 22`
     
+### Step 7.1: How to log into your server after Step 7. 
+
+Please note that from now on, to log into your server you will have to specify the port 2222, so use the following:
+
+`ssh mainuser@{IP} -p 2222`
+    
 ### Step 8: Configure sudo privileges
 1. Open the sudoers file for editing by running the following command:
     
@@ -155,6 +161,12 @@ Now that you have successfully logged into your server, you're ready to begin co
 4. Disable the password requirement for your current user by running the following command:
 
     `sudo passwd -d $(whoami)`
+
+## Setting up your configured server to validate Avalanche. 
+
+Now you have completed the configuration process (congrats!) you can begin setting up your server for validation.
+
+### Step 1: 
 
 #### Now go to https://go.dev/dl/ to find the latest linux version of golang.
 #### You want to find the version that ends with .linux-amd64.tar.gz.
