@@ -112,16 +112,6 @@ Now that you have successfully logged into your server, you're ready to begin co
 
 3. Find and change the following lines:
 
-        PermitRootLogin yes
-        PubkeyAuthentication yes
-        PasswordAuthentication no
-        PermitEmptyPasswords yes
-        
-    - PermitRootLogin yes
-    - PubkeyAuthentication yes
-    - PasswordAuthentication no
-    - PermitEmptyPasswords yes
-
     - `PermitRootLogin yes`
     - `PubkeyAuthentication yes`
     - `PasswordAuthentication no`
