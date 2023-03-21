@@ -82,35 +82,35 @@ Now that you have successfully logged into your server, you're ready to begin co
 
 ### Step 2: Create a non root user account
 
-2. `sudo adduser mainuser`. After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
+1. `sudo adduser mainuser`. After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
 
 ### Step 3: Add the non root user to the sudo group
 
-3. `usermod -aG sudo mainuser`
+1. `usermod -aG sudo mainuser`
 
 ### Step 4: Log out of your server and log back in as the new user
 
-4. Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address `ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
+1. Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address `ssh mainuser@{ip}`. Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
 
 ### Step 5: Configure SSH key-based authentication for the new user
 
-5. 1. First make a new SSH directory in your server `mkdir -p ~/.ssh`. Then, from your windows file explorer, open the `id_rsa.pub` file in your SSH directory (`C:/Users/{enter your username here}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your server. Type `echo {public_key_string} >> ~/.ssh/authorized_keys` but make sure to replace `{public_key_string}` with your entire SSH public key string that you copied from Notepad.
+1. First make a new SSH directory in your server `mkdir -p ~/.ssh`. Then, from your windows file explorer, open the `id_rsa.pub` file in your SSH directory (`C:/Users/{enter your username here}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your server. Type `echo {public_key_string} >> ~/.ssh/authorized_keys` but make sure to replace `{public_key_string}` with your entire SSH public key string that you copied from Notepad.
 
-    2. Verify the above line worked with the following command, which will show your public SSH key: `nano /home/mainuser/.ssh/authorized_keys` If you can see your public SSH key then you have completed the step successfully. Close the Nano text editor by pressing `CTRL` + `X`.
+2. Verify the above line worked with the following command, which will show your public SSH key: `nano /home/mainuser/.ssh/authorized_keys` If you can see your public SSH key then you have completed the step successfully. Close the Nano text editor by pressing `CTRL` + `X`.
 
 ### Step 6: Secure the SSH configuration
 
-6. Secure your SSH configuration by setting the appropriate permissions, ownership, and updating the configuration file.
+1. Secure your SSH configuration by setting the appropriate permissions, ownership, and updating the configuration file.
 
     `chmod -R go= ~/.ssh`
     
     `chown -R mainuser:mainuser ~/.ssh`
         
-    Open the SSH configuration file with nano:
+2. Open the SSH configuration file with nano:
     
     `sudo nano /etc/ssh/sshd_config`. Then enter your user password (the one you were supposed to remember).
 
-    Find and change the following lines:
+3. Find and change the following lines:
 
         PermitRootLogin yes
         PubkeyAuthentication yes
@@ -118,7 +118,7 @@ Now that you have successfully logged into your server, you're ready to begin co
         PermitEmptyPasswords yes
     Then press `Ctrl` + `x`, press `Y` to save the modified buffer, and then press `Enter` to write the file.
     
-    Restart the SSH service to apply the changes:
+4. Restart the SSH service to apply the changes:
     
     `sudo systemctl restart ssh`
     
@@ -126,7 +126,7 @@ Now that you have successfully logged into your server, you're ready to begin co
 
 ### Step 7: Set up the firewall
 
-7. For this step we will be using UFW. Because it's incredibly simple to use and very powerful.
+1. For this step we will be using UFW. Because it's incredibly simple to use and very powerful.
 
     `sudo apt install ufw`
     
@@ -140,7 +140,7 @@ Now that you have successfully logged into your server, you're ready to begin co
     
 ### Step 7.1: How to log into your server after Step 7. 
 
-Please note that from now on, to log into your server you will have to specify the port 2222, so use the following:
+1. Please note that from now on, to log into your server you will have to specify the port 2222, so use the following:
 
 `ssh mainuser@{IP} -p 2222`
     
