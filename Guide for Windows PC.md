@@ -106,14 +106,14 @@ Now that you have successfully logged into your server, you're ready to begin co
 
     `sudo nano /etc/ssh/sshd_config`. Enter your user password (the one you were supposed to remember).
 
-Find and change the following lines:
+    Find and change the following lines:
 
     PermitRootLogin yes
     PubkeyAuthentication yes
     PasswordAuthentication no
     PermitEmptyPasswords yes
 
-Then press `Ctrl` + `x`, press `Y` to save the modified buffer, and then press `Enter` to write the file.
+    Then press `Ctrl` + `x`, press `Y` to save the modified buffer, and then press `Enter` to write the file.
 
     `sudo systemctl restart ssh`
 
