@@ -166,9 +166,9 @@ Now that you have successfully logged into your server, you're ready to begin co
 
     `sudo passwd -d $(whoami)`
 
-## Download `Go` onto your configured server. 
+## Download Go onto your configured server. 
 
-Now you have completed the configuration process you can download and install `Go` which you will need for your node to validate the Avalanche network.
+Now you have completed the configuration process you can download and install Go which you will need for your node to validate the Avalanche network.
 
 ### Step 1: Download & Install the latest Go version
 
