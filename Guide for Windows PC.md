@@ -103,13 +103,12 @@ Now that you have successfully logged into your server, you're ready to begin co
 6. Secure your SSH configuration by setting the appropriate permissions, ownership, and updating the configuration file.
 
     `chmod -R go= ~/.ssh`
+    
     `chown -R mainuser:mainuser ~/.ssh`
         
     Open the SSH configuration file with nano:
     
-        `sudo nano /etc/ssh/sshd_config`
-        
-    Enter your user password (the one you were supposed to remember).
+    `sudo nano /etc/ssh/sshd_config`. Then enter your user password (the one you were supposed to remember).
 
     Find and change the following lines:
 
@@ -117,10 +116,11 @@ Now that you have successfully logged into your server, you're ready to begin co
         PubkeyAuthentication yes
         PasswordAuthentication no
         PermitEmptyPasswords yes
-
     Then press `Ctrl` + `x`, press `Y` to save the modified buffer, and then press `Enter` to write the file.
-
+    
+    Restart the SSH service to apply the changes:
     `sudo systemctl restart ssh`
+    Your SSH configuration is now secured.
 
 ### Step 7: Set up the firewall
 
