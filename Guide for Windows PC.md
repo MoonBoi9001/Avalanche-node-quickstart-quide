@@ -68,22 +68,17 @@ Save and complete your order. You may have to wait up to a few hours until the s
 Once your server has finished being configured, it should appear in the `Server ID` section of the Hetzner Robot dashboard (https://robot.hetzner.com/server). For example, you might see `AX41-NVMe #1871660`.
 
 1. Click on your Server's ID and then copy the IP address. You can make a note of the IP somewhere for future reference, or you can always find it using the link provided above.
-2. Launch `Cmder.exe`, and type `ssh root@{IP}`. Make sure to replace `{IP}` with the IP address of your server that you copied from the link above.
+2. Launch `Cmder.exe`, and type `ssh root@{IP}`. Make sure to replace "`{IP}`" with the IP address of your server that you copied from the link above.
 3. Your Linux terminal emulator will now connect to your server and prompt you to trust the key fingerprint. This will only be asked once, during the initial setup. Type `yes` and press Enter.
 4. Enter your secure passphrase for your SSH keypair when prompted.
 
-
-
-
-
-
-
 ## Beginning configuration of your server.
 
-#### Type the following into your server 1 by 1:
+Now that you have successfully logged into your server you're ready to begin configuration. Below I've listed the code required to setup your node and a brief explanation of what each line does. You should follow this configuration guide sequentially starting from the top and working down. Entering the code out of order may result in failure to setup the node. 
 
-# sudo apt update && sudo apt upgrade
-#### The above line updates the package list and the installed packages to the latest versions.
+`sudo apt update && sudo apt upgrade`
+
+The above line updates the package list and the installed packages to the latest versions.
 #### Y (to continue) and may also need to press okay a few times during the configuration process, you don't need to restart any more processes than recommended, just press enter.
 
 # sudo adduser mainuser
