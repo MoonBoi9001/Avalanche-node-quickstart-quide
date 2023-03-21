@@ -381,11 +381,11 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
     
     If the above doesn't work then try:
     
-        ```
-        wget -nd -m https://raw.githubusercontent.com/ava-labs/avalanche-docs/master/scripts/avalanchego-installer.sh;\
-        chmod 755 avalanchego-installer.sh;\
-        ./avalanchego-installer.sh --reinstall
-        ```
+    ```
+    wget -nd -m https://raw.githubusercontent.com/ava-labs/avalanche-docs/master/scripts/avalanchego-installer.sh;\
+    chmod 755 avalanchego-installer.sh;\
+    ./avalanchego-installer.sh --reinstall
+    ```
         
 Press `2` for cloud provider.
 
