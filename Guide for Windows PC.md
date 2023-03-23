@@ -554,7 +554,7 @@ Lets imagine your node has gone offline and you are now trying to restore your s
 
 # You are almost finished with this guide. If you need any further help I reccomend going to the Avalanche discord. 
 
-#### Please be careful of scammers pretending to be from the Avalanche team that are reaching out to you in your Direct/Private messages)
+#### Please be careful of scammers reacing out to you in your Direct/Private messages, they may pretend to be from the Avalanche team.
 
 #### Relevant Discord Channels below:
 #### https://discord.com/channels/578992315641626624/620633143002660874
