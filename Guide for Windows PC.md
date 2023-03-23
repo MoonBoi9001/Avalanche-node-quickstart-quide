@@ -308,25 +308,25 @@ Press `New SSH key` and then paste the .pub file contents into GitHub, set an ap
 
 1. Change directory to your GOPATH.
 
-Run: `cd $GOPATH`
+    Run: `cd $GOPATH`
     
 2. Make a directory for ava-labs.
 
-Run: `mkdir -p src/github.com/ava-labs`
+    Run: `mkdir -p src/github.com/ava-labs`
     
 3. Change directory to newly created ava-labs directory.
     
-Run: `cd src/github.com/ava-labs`
+    Run: `cd src/github.com/ava-labs`
     
 4. Clone the Ava-Labs Github Repo to this directory.
     
-Run: `git clone git@github.com:ava-labs/avalanchego.git `
+    Run: `git clone git@github.com:ava-labs/avalanchego.git `
 
-Accept the key fingerprint and continue connection with `yes`. Then enter your passphrase for your SSH key if you created one.
+    Accept the key fingerprint and continue connection with `yes`. Then enter your passphrase for your SSH key if you created one.
     
 5. Change directory to newly created ava-labs directory.
 
-Run: `cd avalanchego`
+    Run: `cd avalanchego`
 
 ### Step 2: Build the AvalancheGo Github
     
@@ -354,11 +354,11 @@ Run: `cd avalanchego`
 
 3. Check everything is working as intended.
 
-Run: `sudo systemctl status avalanchego`
+    Run: `sudo systemctl status avalanchego`
 
-The above line should show `active (running)`, if it does then just press `q` and then exit the server, give it a day or so to finish bootstrapping.
+    The above line should show `active (running)`, if it does then just press `q` and then exit the server, give it a day or so to finish bootstrapping.
 
-- Note you can also monitor the system output with the following: Run `sudo journalctl -u avalanchego -f`. Press `Ctrl + c` when you wish to stop reading node output.
+    - Note you can also monitor the system output with the following: Run `sudo journalctl -u avalanchego -f`. Press `Ctrl + c` when you wish to stop reading node output.
 
 ## Next day tasks (After bootstrappoing is complete) Very important!:
 
@@ -374,7 +374,7 @@ The above line should show `active (running)`, if it does then just press `q` an
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
     ```
 
-If bootstrapping is complete then one of the final outputs of the health check should be: `"healthy":true`.
+    If bootstrapping is complete then one of the final outputs of the health check should be: `"healthy":true`.
 
 ### Step 2: Backup your staking keys.
 
@@ -384,9 +384,9 @@ If bootstrapping is complete then one of the final outputs of the health check s
 
 3. MODIFY the following command to suit your circumstances before entering it into your terminal window:
 
-Run: `scp -r mainuser@xxx.xxx.xxx.xxx:/home/mainuser/.avalanchego/staking C:/Users/"WindowsUsername"/avalanche_backup_todays_date`
+    Run: `scp -r mainuser@xxx.xxx.xxx.xxx:/home/mainuser/.avalanchego/staking C:/Users/"WindowsUsername"/avalanche_backup_todays_date`
 
-Make sure to replace `mainuser` with whatever you called your login (if you followed my guide then you chose mainuser anyway so no need to change it), also make sure to replace `xxx.xxx.xxx.xxx` with your servers IP, also make sure to replace `avalanche_backup_todays_date` with the actual date e.g `avalanche_backup_21_03_2023`...
+    Make sure to replace `mainuser` with whatever you called your login (if you followed my guide then you chose mainuser anyway so no need to change it), also make sure to replace `xxx.xxx.xxx.xxx` with your servers IP, also make sure to replace `avalanche_backup_todays_date` with the actual date e.g `avalanche_backup_21_03_2023`...
 
 4. Verify that your staker keys have been saved to the chosen directory on your Windows PC and I also strongly recommend saving them to a pen stick or removable storage device for extra safety. If your node is ever shutdown or goes wrong and you need to restore your NodeID on another server then you will need these files to restore the NodeID and retain your staking uptime. Avalanche requires a MINIMUM staking uptime of 80%+ (at time of writing) for rewards payout. 
 
@@ -402,9 +402,9 @@ Make sure to replace `mainuser` with whatever you called your login (if you foll
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/info
     ```
     
-Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy99r9mJt`. This ID is sharable to your friends if they want to delegate AVAX tokens to your node. You'll need this NodeID in order to stake your AVAX.
+    Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy99r9mJt`. This ID is sharable to your friends if they want to delegate AVAX tokens to your node. You'll need this NodeID in order to stake your AVAX.
 
-## How to update and monitor your node.
+## How to update, monitor and restore your node.
 
 #### Note: This is an incredibly important part of this guide. You will need to monitor your node for the duration of time you are staking. Failing to monitor your node is likely to lead to a rewards payout miss for you and your delegators. At the time of writing the required uptime for staking rewards is 80% and there is no slashing. Non-default subnets may have different requirements to the C/X/P chains. It's your responsibility to be aware of the full requirements to recieve staking rewards and your responsibility to research the full risks involved for validating any subnets. 
 
@@ -419,6 +419,8 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
     "method" :"health.health"
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
     ```
+    
+    - Note that this check is not sufficient on it's own to ensure your node is functioning appropriately!
 
 2. Every so often a new version of AvalancheGo will come out. Be sure to follow the public Avalanche Announcements on Discord, Telegram and Twitter:
 
@@ -471,24 +473,83 @@ Your public Node-ID looks something like this `NodeID-6rRhirfsvBGvtxprBzEVR2AAVy
 
     Type `private` then type `on` to turn on state sync (unless you NEED the historical data, TIP: most don't).
     
-2. Give the prior step a few mins first (suggested 3-5 mins) and then do a health check.
+2. Give the prior step a few mins first (suggested 3-5 mins) and then do a health check to confirm everything is working.
 
-        curl -X POST --data '{
-        "jsonrpc":"2.0",
-        "id"     :1,
-        "method" :"health.health"
-        }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
+    ```
+    curl -X POST --data '{
+    "jsonrpc":"2.0",
+    "id"     :1,
+    "method" :"health.health"
+    }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/health
+    ```
 
-You can also check uptime:
-
+    You can also check uptime:
+    
+    ```
     curl -X POST --data '{
     "jsonrpc":"2.0",
     "id"     :1,
     "method" :"info.uptime"
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/info
+    ```
+    
+    Now go back to the [node monitoring sites above](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#step-1-how-to-monitor-your-node) (AllNodes/VScout are usually the fastest to update in my experience) and check your node has updated to the latest revision.
 
-Now go back to the [node monitoring sites above](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#step-1-how-to-monitor-your-node) (AllNodes/VScout are usually the fastest to update in my experience) and check your node has updated to the latest revision.
+### Step 3: How to restore your NodeID from backed up staking keys:
 
+Lets imagine your node has gone offline and you are now trying to restore your staking keys to a fresh node, then the process you would follow is as follows: (bear in mind you should only have your staking keys active on 1 node at a time to prevent potential network conflicts).
+
+1. Open up a windows terminal by typing `cmd` into the windows search and clicking to open command prompt.
+
+2. Type the following 3 lines of code into your terminal, make sure to replace `{your username}`, `{backup date}`, `mainuser` and `xxx.xxx.xxx.xxx` with the actual values that reflect your circumstances. (you may have to edit the full directory path if your staking keys are saved elsewhere. This will use SSH to copy and paste your staking keys from the directory where they are saved to a temporary directory on your server.
+
+    Run: `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/staker.crt mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
+    
+    Run: `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/staker.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
+    
+    Run: `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/signer.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
+
+3. Now you have copied your staking keys into a temporary directory in your server, you'll need to move them to the staking directory. Open up Cmder and log into your server then type:
+
+    Run: `mv /home/mainuser/temp/staker.crt /home/mainuser/.avalanchego/staking/`
+    
+    Run: `mv /home/mainuser/temp/staker.key /home/mainuser/.avalanchego/staking/`
+    
+    Run: `mv /home/mainuser/temp/signer.key /home/mainuser/.avalanchego/staking/`
+
+    Note: You will have to overwrite those files to get your prior NodeID back.
+
+4. Delete the temp folder:
+
+    Run: `rm -r /home/mainuser/temp`
+
+5. Your Staking keys should now be restored onto your server. Now you'll need to restart the Avalanchego process:
+
+    Run: `sudo systemctl stop avalanchego`
+    
+    Run: `sudo systemctl start avalanchego`
+
+6. Check the system process is running:
+
+    Run: `sudo systemctl status avalanchego`
+    
+7. Make sure port 9651 is open, if you have UFW installed (you will if you followed this guide) then type.
+
+    Run: `sudo ufw status numbered`
+    
+8. You should see that 9651 is open along with the SSH port (we are using port 2222 in this guide), if it isn't then do:
+
+    Run: `sudo ufw allow 9651`
+    
+    Run: `sudo ufw allow 2222`
+    
+    Run: `sudo ufw disable`
+    
+    Run: `sudo ufw enable`
+    
+    Run: `sudo ufw status numbered`
+    
+    You should now see that both the SSH port (2222) and 9651 are open.
 
 
 # You are almost finished with this guide. If you need any further help I reccomend going to the Avalanche discord (please be careful of scammers pretending to be from the Avalanche team that are reaching out to you in your Direct/Private messages)
@@ -497,55 +558,3 @@ Now go back to the [node monitoring sites above](https://github.com/MoonBoi9001/
 #### https://discord.com/channels/578992315641626624/620633143002660874
 #### https://discord.com/channels/578992315641626624/757576823570825316
 
-## How to restore your NodeID from backed up staking keys:
-
-Lets imagine your node has gone offline and you are now trying to restore your staking keys to a fresh node, then the process you would follow is as follows: (bear in mind you should only have your stakeing keys active on 1 node at a time to prevent potential network conflicts).
-
-### Step 1: 
-1. Open up a windows terminal by typing `cmd` into the windows search and clicking to open command prompt.
-
-3. Type the following 3 lines of code into your terminal, make sure to replace `{your username}`, `{backup date}`, `mainuser` and `xxx.xxx.xxx.xxx` with the actual values that reflect your circumstances. (you may have to edit the full directory path if your staking keys are saved elsewhere. This will use SSH to copy and paste your staking keys from the directory where they are saved to a temporary directory on your server.
-
-    - `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/staker.crt mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
-    - `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/staker.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
-    - `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/signer.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
-
-3. Now you have copied our staking keys onto a temporary directory in your server you'll need to move them to the staking directory from within the server. Open up Cmder and log into your server then type:
-
-    - `mv /home/mainuser/temp/staker.crt /home/mainuser/.avalanchego/staking/`
-    - `mv /home/mainuser/temp/staker.key /home/mainuser/.avalanchego/staking/`
-    - `mv /home/mainuser/temp/signer.key /home/mainuser/.avalanchego/staking/`
-
-Note: You will have to overwrite those files to get your prior NodeID back.
-
-4. Next you can delete the temp folder:
-
-    `rm -r /home/mainuser/temp`
-
-5. Your Staking keys should now be restored onto your server. Now you'll need to restart the Avalanchego process:
-
-    `sudo systemctl stop avalanchego`
-    
-    `sudo systemctl start avalanchego`
-
-6. Check the system process is running:
-
-    `sudo systemctl status avalanchego`
-    
-7. Make sure port 9651 is open, if you have UFW installed (you will if you followed this guide) then type.
-
-    `sudo ufw status numbered`
-    
-8. You should see that 9651 is open along with the SSH port (we are using port 2222 in this guide), if it isn't then do:
-
-    `sudo ufw allow 9651`
-    
-    `sudo ufw allow 2222`
-    
-    `sudo ufw disable`
-    
-    `sudo ufw enable`
-    
-    `sudo ufw status numbered`
-    
-You should now see that both the SSH port (2222) and 9651 are open. 
