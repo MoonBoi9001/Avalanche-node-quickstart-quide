@@ -114,7 +114,7 @@ This will log you out of your server. Close Cmder, then relaunch it and enter th
 
 Run: `ssh mainuser@{ip}`
 
-Press `Enter` to skip the SSH passphrase, then enter your newly created main user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
+Press `Enter` to skip the SSH passphrase, this time only instead you will use your newly created user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
 
 ### Step 5: Configure SSH key-based authentication for the new user
 
@@ -152,6 +152,7 @@ Press `Enter` to skip the SSH passphrase, then enter your newly created main use
     - Make sure `PubkeyAuthentication` is set to `yes`
     - Change `PasswordAuthentication yes` to `PasswordAuthentication no`
     - Change `PermitEmptyPasswords yes` to `PermitEmptyPasswords no`
+    - Change `Port 22`to 'Port 2222'
 
 4. Save and exit the file:
     - Press `Ctrl + X` to initiate the save process.
@@ -187,14 +188,16 @@ Press `Enter` to skip the SSH passphrase, then enter your newly created main use
 5. Check the UFW status to ensure that ports 2222 and 9651 are open and accessible. Port 22 should not be open. If port 22 is open, you can close it with `sudo ufw delete allow 22`.
 
     Run: `sudo ufw status numbered`
+   
+### Step 8: How to log into your server after Steps 6 & 7
 
-### Step 7.1: How to log into your server after Step 7
-
-1. Please note that from now on, to log into your server, you will have to specify port 2222. Use the following command:
+1. Please note that from now on, to log into your server, you will have to specify port 2222. Use the following command when logging in with Cmder:
 
     Run: `ssh mainuser@{IP} -p 2222`
+    
+    Enter your secure passphrase for your SSH keypair when prompted.
 
-### Step 8: Configure sudo privileges
+### Step 9: Configure sudo privileges
 
 1. Open the sudoers file for editing by running the following command:
 
@@ -224,6 +227,8 @@ Now you have completed the configuration process, you can download and install G
     Run: `wget -c https://golang.org/dl/go1.20.2.linux-amd64.tar.gz`
     
     Run: `sudo tar -C /usr/local -xvzf go1.20.2.linux-amd64.tar.gz`
+    
+    The first command does this thingy, while the second command does this other thingy.
 
 2. Take ownership of the `/usr/local/go` directory
 
@@ -243,7 +248,6 @@ Now you have completed the configuration process, you can download and install G
 
         export GOPATH=$HOME/go
         export PATH=$PATH:$GOPATH/bin
-        export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
         export PATH=$PATH:/usr/local/go/bin
         export GOPATH="$HOME/go_projects"
         export GOBIN="$GOPATH/bin"
@@ -286,7 +290,7 @@ Make sure to replace `your_github_email@example.com` with your actual GitHub acc
 
 ### Step 2: Copy your SSH public key
 
-The next line of code will show the new SSH keys.
+The next section of code will show the new SSH keys.
 
 Run: `ls -al ~/.ssh`
 
