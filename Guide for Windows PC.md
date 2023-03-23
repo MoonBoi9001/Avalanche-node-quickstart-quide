@@ -352,16 +352,9 @@ Run: `sudo systemctl status avalanchego`
 
 The above line should show `active (running)`, if it does then just press `q` and then exit the server, give it a day or so to finish bootstrapping.
 
-- Note you can also monitor the system output with the following:
+- Note you can also monitor the system output with the following: Run `sudo journalctl -u avalanchego -f`. Press `Ctrl + c` when you wish to stop reading node output.
 
-- Run: `sudo journalctl -u avalanchego -f`
-
-- This line enables to to read the system output and see when bootstrapping is nearly finished.
-
-- Press `Ctrl + c` when you wish to stop reading node output.
-
-
-## Next day tasks (Or after bootstrappoing is complete which takes about 24 hours AFAIK) Very important!:
+## Next day tasks (After bootstrappoing is complete) Very important!:
 
 ### Step 1: Check that bootstrapping is complete.
 
@@ -380,10 +373,14 @@ If bootstrapping is complete then one of the final outputs of the health check s
 ### Step 2: Backup your staking keys.
 
 1. Next you will NEED to backup your staking keys!!! (Very important!)
+
 2. Open a terminal window on your Windows PC by typing CMD into the windows searchbar and clicking on command prompt.
-3. MODIFY the following command to suit your circumstance before entering it into your terminal window:
-    - `scp -r mainuser@xxx.xxx.xxx.xxx:/home/mainuser/.avalanchego/staking C:/Users/"WindowsUsername"/avalanche_backup_todays_date`
-    Make sure to replace `mainuser` with whatever you called your login (if you followed my guide then you chose mainuser anyway so no need to change it), also make sure to replace `xxx.xxx.xxx.xxx` with your servers IP, also make sure to replace `avalanche_backup_todays_date` with the actual date e.g `avalanche_backup_21_03_2023`...
+
+3. MODIFY the following command to suit your circumstances before entering it into your terminal window:
+- `scp -r mainuser@xxx.xxx.xxx.xxx:/home/mainuser/.avalanchego/staking C:/Users/"WindowsUsername"/avalanche_backup_todays_date`
+
+Make sure to replace `mainuser` with whatever you called your login (if you followed my guide then you chose mainuser anyway so no need to change it), also make sure to replace `xxx.xxx.xxx.xxx` with your servers IP, also make sure to replace `avalanche_backup_todays_date` with the actual date e.g `avalanche_backup_21_03_2023`...
+
 4. Verify that your staker keys have been saved to the chosen directory on your Windows PC and I also strongly recommend saving them to a pen stick or removable storage device for extra safety. If your node is ever shutdown or goes wrong and you need to restore your NodeID on another server then you will need these files to restore the NodeID and retain your staking uptime. Avalanche requires a MINIMUM staking uptime of 80%+ (at time of writing) for rewards payout. 
 
 ### Step 3: Find your NodeID:
