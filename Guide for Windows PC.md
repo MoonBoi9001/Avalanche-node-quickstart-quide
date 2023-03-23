@@ -316,7 +316,7 @@ Run: `cd src/github.com/ava-labs`
     
 Run: `git clone git@github.com:ava-labs/avalanchego.git `
 
-    Accept the key fingerprint and continue connection with `yes`. Then enter your passphrase for your SSH key if you created one.
+Accept the key fingerprint and continue connection with `yes`. Then enter your passphrase for your SSH key if you created one.
     
 5. Change directory to newly created ava-labs directory.
 
@@ -350,15 +350,15 @@ Run: `./scripts/build.sh`
 
 Run: `sudo systemctl status avalanchego`
 
-    The above line should show `active (running)`, if it does then just press `q` and then exit the server, give it a day or so to finish bootstrapping.
+The above line should show `active (running)`, if it does then just press `q` and then exit the server, give it a day or so to finish bootstrapping.
 
-4. Check system output:
+- Note you can also monitor the system output with the following:
 
-Run: `sudo journalctl -u avalanchego -f`
+- Run: `sudo journalctl -u avalanchego -f`
 
-    This line enables to to read the system output and see when bootstrapping is nearly finished.
+- This line enables to to read the system output and see when bootstrapping is nearly finished.
 
-    Press `Ctrl + c` when you wish to stop reading node output.
+- Press `Ctrl + c` when you wish to stop reading node output.
 
 
 ## Next day tasks (Or after bootstrappoing is complete which takes about 24 hours AFAIK) Very important!:
