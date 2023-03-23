@@ -84,9 +84,7 @@ Once your server has finished being configured, it should appear in the `Server 
 
     Your Linux terminal emulator will now connect to your server and prompt you to trust the key fingerprint. This will only be asked once, during the initial setup. Type `yes` and press Enter.
 
-4. Enter your secure passphrase
-
-    Enter your secure passphrase for your SSH keypair when prompted.
+4. Enter your secure passphrase for your SSH keypair when prompted.
 
 ## Beginning configuration of your server
 
