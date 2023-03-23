@@ -251,17 +251,16 @@ Now you have completed the configuration process, you can download and install G
     Run: `. ~/.profile`
 
 5. Verify that the environment variables are set correctly:
-    - Check the updated `PATH` variable:
 
-        Run: `echo $PATH`
+    This command displays the content of the `PATH` environment variable, ensuring that the Go-related paths have been added successfully.
+    
+    Run: `echo $PATH`
 
-        This command displays the content of the `PATH` environment variable, ensuring that the Go-related paths have been added successfully.
+6. Verify the installed Go version:
 
-    - Verify the installed Go version:
-
-        Run: `go version`
-
-        This command prints the version of Go installed on your system. If the output shows the expected Go version, it indicates that the environment variables have been configured correctly. If not, double-check the previous steps.
+    This command prints the version of Go installed on your system. If the output shows the expected Go version, it indicates that the environment variables have been configured correctly. If not, double-check the previous steps.
+    
+    Run: `go version`
 
 ## Link your Github account with your server via SSH
 
@@ -326,11 +325,11 @@ Run: `cd avalanchego`
     
 1. Install & build the directory.
     
-Run: `sudo apt-get install build-essential`
+    Run: `sudo apt-get install build-essential`
     
     Press `Y`, then press `Enter` twice when prompted.
     
-Run: `./scripts/build.sh`
+    Run: `./scripts/build.sh`
 
 2. Run the installer script.
 
@@ -377,7 +376,8 @@ If bootstrapping is complete then one of the final outputs of the health check s
 2. Open a terminal window on your Windows PC by typing CMD into the windows searchbar and clicking on command prompt.
 
 3. MODIFY the following command to suit your circumstances before entering it into your terminal window:
-- `scp -r mainuser@xxx.xxx.xxx.xxx:/home/mainuser/.avalanchego/staking C:/Users/"WindowsUsername"/avalanche_backup_todays_date`
+
+Run: `scp -r mainuser@xxx.xxx.xxx.xxx:/home/mainuser/.avalanchego/staking C:/Users/"WindowsUsername"/avalanche_backup_todays_date`
 
 Make sure to replace `mainuser` with whatever you called your login (if you followed my guide then you chose mainuser anyway so no need to change it), also make sure to replace `xxx.xxx.xxx.xxx` with your servers IP, also make sure to replace `avalanche_backup_todays_date` with the actual date e.g `avalanche_backup_21_03_2023`...
 
