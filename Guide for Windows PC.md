@@ -122,7 +122,7 @@ Press `Enter` to skip the SSH passphrase, this time only instead you will use yo
 
     Run: `mkdir -p ~/.ssh`
     
-2. Then, from your Windows File Explorer, open the `id_rsa.pub` file in your SSH directory (`C:/Users/{enter your username here}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your server. Type the following, replacing `{public_key_string}` with your entire SSH public key string that you copied from Notepad:
+2. Then, from your Windows File Explorer, open the `id_rsa.pub` file in your SSH directory (`C:/Users/{your_username}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your server. Type the following, replacing `{public_key_string}` with your entire SSH public key string that you copied from Notepad:
 
     Run: `echo '{public_key_string}' >> ~/.ssh/authorized_keys`
     
@@ -388,9 +388,9 @@ Press `New SSH key` and then paste the .pub file contents into GitHub, set an ap
 
 3. MODIFY the following command to suit your circumstances before entering it into your terminal window:
 
-    Run: `scp -r mainuser@xxx.xxx.xxx.xxx:/home/mainuser/.avalanchego/staking C:/Users/"WindowsUsername"/avalanche_backup_todays_date`
+    Run: `scp -r mainuser@xxx.xxx.xxx.xxx:/home/mainuser/.avalanchego/staking C:/Users/{your_username}/avalanche_staking_keys`
 
-    Make sure to replace `mainuser` with whatever you called your login (if you followed my guide then you chose mainuser anyway so no need to change it), also make sure to replace `xxx.xxx.xxx.xxx` with your servers IP, also make sure to replace `avalanche_backup_todays_date` with the actual date e.g `avalanche_backup_21_03_2023`...
+    Make sure to replace `mainuser` with whatever you called your login (if you followed my guide then you chose mainuser anyway so no need to change it), also make sure to replace `xxx.xxx.xxx.xxx` with your servers IP, also make sure to replace `{your_username}` with your windows username.
 
 4. Verify that your staker keys have been saved to the chosen directory on your Windows PC and I also strongly recommend saving them to a pen stick or removable storage device for extra safety. If your node is ever shutdown or goes wrong and you need to restore your NodeID on another server then you will need these files to restore the NodeID and retain your staking uptime. Avalanche requires a MINIMUM staking uptime of 80%+ (at time of writing) for rewards payout. 
 
@@ -511,13 +511,13 @@ Lets imagine your node has gone offline and you are now trying to restore your s
 
 1. Open up a windows terminal by typing `cmd` into the windows search and clicking to open command prompt.
 
-2. Type the following 3 lines of code into your terminal, make sure to replace `{your username}`, `{backup date}`, `mainuser` and `xxx.xxx.xxx.xxx` with the actual values that reflect your circumstances. (you may have to edit the full directory path if your staking keys are saved elsewhere. This will use SSH to copy and paste your staking keys from the directory where they are saved to a temporary directory on your server.
+2. Type the following 3 lines of code into your terminal, make sure to replace `{your username}`, `mainuser` and `xxx.xxx.xxx.xxx` with the actual values that reflect your circumstances. (you may have to edit the full directory path if you saved your staking keys elsewhere. This will use SSH to copy and paste your staking keys from the directory where they are saved to a temporary directory on your server.
 
-    Run: `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/staker.crt mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
+    Run: `scp C:/Users/{your username}/avalanche_staking_keys/staking/staker.crt mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
     
-    Run: `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/staker.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
+    Run: `scp C:/Users/{your username}/avalanche_staking_keys/staking/staker.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
     
-    Run: `scp C:/Users/{your username}/avalanche_backup_{backup date}/staking/signer.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
+    Run: `scp C:/Users/{your username}/avalanche_staking_keys/staking/signer.key mainuser@xxx.xxx.xxx.xxx:/home/mainuser/temp`
 
 3. Now you have copied your staking keys into a temporary directory in your server, you'll need to move them to the staking directory. Open up Cmder and log into your server then type:
 
