@@ -154,7 +154,7 @@ Press `Enter` to skip the SSH passphrase, this time only, instead you will use y
 
 3. Find and change the following lines (double check them afterwards):
 
-    - Set `Port 22`to 'Port 2222' and remove `#` if nescessary
+    - Set `Port 22`to `Port 2222` and remove `#` if nescessary
     - Set `PermitRootLogin` to `PermitRootLogin no` and remove `#` if nescessary
     - Set `PubkeyAuthentication` to `PubkeyAuthentication yes`and remove `#` if nescessary
     - Set `PasswordAuthentication` to `PasswordAuthentication no` and remove `#` if nescessary
