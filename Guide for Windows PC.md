@@ -4,7 +4,7 @@ This guide is intended to help Windows users set up their Avalanche node on a Li
 
 ## Table of Contents
 
-1. [Support and Donations](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide#support-and-donations)
+1. [Support and Donations](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#support-and-donations)
 2. [Prerequisites](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#prerequisites)
 3. [Registering your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#registering-your-server)
 4. [Logging into your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#logging-into-your-server)
@@ -15,7 +15,7 @@ This guide is intended to help Windows users set up their Avalanche node on a Li
 9. [Backup your staking keys & Find your NodeID](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#backup-your-staking-keys--find-your-nodeid)
 10. [How to update, monitor and restore your node](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#how-to-update-monitor-and-restore-your-node)
 11. [Disclaimer](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#disclaimer)
-12. [License](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide#license)
+12. [License](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#license)
 
 ## Support and Donations
 
@@ -597,10 +597,6 @@ Lets imagine your node has gone offline and you are now trying to restore your s
 #### Relevant Discord Channels below:
 #### https://discord.com/channels/578992315641626624/620633143002660874
 #### https://discord.com/channels/578992315641626624/757576823570825316
-
-## Support and Donations
-
-If you find this guide useful, please consider donating some AVAX to the following address: `0x721644dff35504c8F9A3c389d7C4dCE5D8afC4d2`. Any amount is greatly appreciated!
 
 ## Disclaimer
 
