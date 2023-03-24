@@ -34,8 +34,8 @@ Generate a new SSH keypair to securely log into your server. If you already have
 
 1. Create a suitable folder (e.g., `avax_server_AX41-NVME`) in this directory: `C:/Users/{your_username}/.ssh` (create the directory if it doesn't exist) for saving your SSH keys inside.
 2. Open the newly created folder.
-3. Launch Command Prompt by typing `cmd` into Windows search and pressing Enter. This will launch a terminal window.
-4. Type `ssh-keygen` into the terminal window.
+3. Launch Command Prompt by typing `cmd` into Windows search and pressing Enter. This will launch a Windows terminal window.
+4. Type `ssh-keygen` into the terminal.
 5. Enter a file to save your SSH keypair, e.g., `C:/Users/{your_username}/.ssh/{your_folder_name}/id_rsa`
 6. Enter a secure passphrase to encrypt your SSH key on your Windows device. Choose a passphrase that is at least 12 characters long, with a mix of uppercase and lowercase letters, numbers, and special characters. This passphrase is crucial to protect your SSH key, and you MUST remember it!
 7. Confirm that the newly created keypair is saved into the new folder you created previously.
