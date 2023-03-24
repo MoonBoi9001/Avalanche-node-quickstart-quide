@@ -53,7 +53,7 @@ By this point you should have:
 
 ## Registering your server
 
-This guide gives an example walkthrough of how to register a server using popular/cheap provider 'Hetzner' for illustrative purposes, although you may prefer/need to use an alternative provider instead.
+This guide gives an example walkthrough of how to register a server using popular/cheap provider `Hetzner` for illustrative purposes, although you may prefer/need to use an alternative provider instead.
 
 #### 1. Purchase AX41-NVME on Hetzner
 
