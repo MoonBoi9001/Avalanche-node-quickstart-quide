@@ -120,7 +120,7 @@ This will log you out of your server. Next enter the following command, replacin
 
 Run: `ssh mainuser@{ip}`
 
-Press `Enter` to skip the SSH passphrase, this time only instead you will use your newly created user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
+Press `Enter` to skip the SSH passphrase, this time only, instead you will use your newly created user password (the one you were supposed to remember). If you take too long, it may say "Connection closed by '{ip}' port 22"; just try again, but do it faster this time.
 
 ### Step 5: Configure SSH key-based authentication for the new user
 
