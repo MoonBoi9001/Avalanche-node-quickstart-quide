@@ -66,7 +66,7 @@ Start by purchasing an AX41-NVME server on Hetzner in Germany or Finland, keepin
 
 Click "Order" to proceed to the checkout page. On the checkout page, you will have the option to log in to your server using either a password or a public key. Choose the public key option.
 - If you followed the earlier part of this guide, your Notepad with the public key should be open already. Copy your public key and paste it into the "Key Data" field.
-- If you're not sure where to find your public key, go to the following directory: `C:/Users/{your_username}/.ssh` and find the file named `id_rsa.pub`.
+- If you're not sure where to find your public key, go to the following directory: `C:/Users/{your_username}/.ssh` and find the file named `id_rsa.pub`, not the one named `id_rsa`.
 
 Save and complete your order. You may have to wait up to a few hours until the server is available.
 
