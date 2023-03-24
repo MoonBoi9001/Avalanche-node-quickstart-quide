@@ -46,7 +46,14 @@ Generate a new SSH keypair to securely log into your server. If you already have
 
 # Guide starts here if you have completed the prerequisites 
 
+By this point you should have:
+    - Cmder.exe downloaded & installed. 
+    - A Github account. 
+    - A SSH keypair.
+
 ## Registering your server
+
+This guide gives an example walkthrough of how to register a server using popular/cheap provider 'Hetzner' for illustrative purposes, although you may prefer/need to use an alternative provider instead.
 
 #### 1. Purchase AX41-NVME on Hetzner
 
