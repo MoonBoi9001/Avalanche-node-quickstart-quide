@@ -116,7 +116,7 @@ Run: `usermod -aG sudo mainuser`
 
 Run: `exit`
 
-This will log you out of your server. Close Cmder, then relaunch it and enter the following command, replacing `{ip}` with your server's IP address:
+This will log you out of your server. Next enter the following command, replacing `{ip}` with your server's IP address:
 
 Run: `ssh mainuser@{ip}`
 
