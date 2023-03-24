@@ -432,27 +432,33 @@ Press `New SSH key` and then paste the .pub file contents into GitHub, set an ap
     - https://t.me/avalanche_announcements 
     - https://twitter.com/avalancheavax , https://twitter.com/_patrickogrady 
 
-3. You should also use the official Avalanche Node notification service to monitor your node:
+3. You can (and should!) also check directly from the avalanchego releases page of the ava-labs github. This may be the best way to get the most accurate and timely information. 
+
+    - https://github.com/ava-labs/avalanchego/releases
+    
+    #### On the release page linked above, click the drop down arrow next to `Watch` at the top right hand side of the page then select `Custom`, then select `Releases` and click `Apply`. This will send you notifications whenever there is a new release. You can also get Android/iOS push notifications for releases if you download the Github app onto your device.
+
+4. You should also use the official Avalanche Node notification service to monitor your node:
 
     - https://notify.avax.network/
     
-4. You should also use the validator dashboard: (enter your NodeID into the NodeID box on the page)
+5. You should also use the validator dashboard: (enter your NodeID into the NodeID box on the page)
 
     - https://stats.avax.network/dashboard/validator-health-check/
     
-5. You should also use AllNodes:
+6. You should also use AllNodes:
 
     - https://check.allnodes.com
     
-6. You should also use VScout
+7. You should also use VScout
 
     - https://vscout.io/validator
 
-7. You should also use AVASCAN:
+8. You should also use AVASCAN:
 
     - https://avascan.info/staking/validator
 
-8. I suggest you bookmark the links in steps 4 to 7 inclusive, with your NodeID entered to each, so you can quickly and easily check your node performance. It is not sufficient to only use 1 provider.  
+9. I suggest you bookmark the links in steps 4 to 7 inclusive, with your NodeID entered to each, so you can quickly and easily check your node performance. It is not sufficient to only use 1 provider.  
 
 
 ### Step 2: How to update your node when new versions come out
