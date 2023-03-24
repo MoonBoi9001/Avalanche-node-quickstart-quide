@@ -152,13 +152,14 @@ Press `Enter` to skip the SSH passphrase, this time only, instead you will use y
     
    Then enter your user password (the one you were supposed to remember).
 
-3. Find and change the following lines:
+3. Find and change the following lines (double check them afterwards):
 
-    - Change `PermitRootLogin yes` to `PermitRootLogin no`
-    - Make sure `PubkeyAuthentication` is set to `yes`
-    - Change `PasswordAuthentication yes` to `PasswordAuthentication no`
-    - Change `PermitEmptyPasswords yes` to `PermitEmptyPasswords no`
-    - Change `Port 22`to 'Port 2222'
+    - Set `Port 22`to 'Port 2222' and remove `#` if nescessary
+    - Set `PermitRootLogin` to `PermitRootLogin no` and remove `#` if nescessary
+    - Set `PubkeyAuthentication` to `PubkeyAuthentication yes`and remove `#` if nescessary
+    - Set `PasswordAuthentication` to `PasswordAuthentication no` and remove `#` if nescessary
+    - Set `PermitEmptyPasswords` to `PermitEmptyPasswords no` and remove `#` if nescessary
+
 
 4. Save and exit the file:
     - Press `Ctrl + X` to initiate the save process.
