@@ -75,6 +75,7 @@ Save and complete your order. You may have to wait a few hours until the server 
 If you have been following the guide and have opted to use Hetzner as your server provider, then once your server has finished being configured, it should appear in the `Server ID` section of the [Hetzner Robot dashboard](https://robot.hetzner.com/server). For example, you might see `AX41-NVMe #1871660`.
 
 1. Find your server's IP address
+
     Click on your Server's ID and then copy the IP address. You can make a note of the IP somewhere for future reference, or you can always find it using the link provided above.
 
 2. Connect to your server using Cmder
