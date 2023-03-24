@@ -436,7 +436,7 @@ Press `New SSH key` and then paste the .pub file contents into GitHub, set an ap
 
     - https://github.com/ava-labs/avalanchego/releases
     
-    On the release page linked above, click the drop down arrow next to `Watch` at the top right hand side of the page then select `Custom`, then select `Releases` and click `Apply`. This will send you notifications whenever there is a new release. You can also get Android/iOS push notifications for releases if you download the Github app onto your device.
+    On the release page linked above, click the drop down arrow next to `Watch` at the top right hand side of the page then select `Custom`, then select `Releases` and click `Apply`. This should send you notifications whenever there is a new release. You can also get Android/iOS push notifications for releases if you download the Github app onto your device.
 
 4. You should also use the official Avalanche Node notification service to monitor your node:
 
