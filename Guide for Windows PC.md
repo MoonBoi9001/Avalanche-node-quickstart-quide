@@ -364,7 +364,7 @@ Press `New SSH key` and then paste the .pub file contents into GitHub, set an ap
 
     - Note you can also monitor the system output with the following: Run `sudo journalctl -u avalanchego -f`. Press `Ctrl + c` when you wish to stop reading node output.
 
-## Backup your staking keys & Find your NodeID:
+## Backup your staking keys & find your NodeID:
 
 ### Step 1: Check that bootstrapping is complete.
 
