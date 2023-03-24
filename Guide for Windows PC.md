@@ -130,7 +130,7 @@ Press `Enter` to skip the SSH passphrase, this time only, instead you will use y
     
 2. Then, from your Windows File Explorer, open the `id_rsa.pub` file in your SSH directory (`C:/Users/{your_username}/.ssh`) using Notepad, and then copy the entire contents of the file. Once the public key string is copied, go back to Cmder where you are logged into your server. Type the following, replacing `{public_key_string}` with your entire SSH public key string that you copied from Notepad:
 
-    Run: `echo '{public_key_string}' >> ~/.ssh/authorized_keys`
+    Run: `echo {public_key_string} >> ~/.ssh/authorized_keys`
     
 3. Verify the above line worked with the following command, which will show your public SSH key:
 
