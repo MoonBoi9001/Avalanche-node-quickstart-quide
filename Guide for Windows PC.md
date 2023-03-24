@@ -47,9 +47,9 @@ Generate a new SSH keypair to securely log into your server. If you already have
 # Guide starts here if you have completed the prerequisites 
 
 By this point you should have:
-    - Cmder.exe downloaded & installed. 
-    - A Github account. 
-    - A SSH keypair.
+- Cmder.exe downloaded & installed. 
+- A Github account. 
+- A SSH keypair.
 
 ## Registering your server
 
