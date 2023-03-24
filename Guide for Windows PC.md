@@ -106,7 +106,7 @@ After entering, press `Y` when prompted (to continue) and may also need to press
 
 Run: `sudo adduser mainuser`
 
-After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). Press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
+After entering, set a new password. It doesn't really matter what you set it to, as you won't use it. Just make it sufficiently complex so it's not hacked before you disable password login (but make sure to remember it). If you get 'Authentication token manipulation error' you entered two differet passwords, just try again. When prompted to enter new values for the user such as Full Name, etc... just press `Enter` a few times to set default new user values. Then press `Y` to show information is correct.
 
 ### Step 3: Add the non-root user to the sudo group
 
