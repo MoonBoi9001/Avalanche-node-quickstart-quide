@@ -32,7 +32,7 @@ Generate a new SSH keypair to securely log into your server. If you already have
 
     If you don't have any files or the `.ssh` directory doesn't exist, follow these steps:
 
-1. Create a suitable folder (e.g., `hetzner_germany_avax_server_AX41-NVME`) in this directory: `C:/Users/{your_username}/.ssh` for saving your SSH keys inside.
+1. Create a suitable folder (e.g., `hetzner_germany_avax_server_AX41-NVME`) in this directory: `C:/Users/{your_username}/.ssh` (create the directory if it doesn't exist) for saving your SSH keys inside.
 2. Open the newly created folder.
 3. Launch Command Prompt by typing `cmd` into Windows search and pressing Enter. This will launch a terminal window.
 4. Type `ssh-keygen` into the terminal window.
