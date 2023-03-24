@@ -38,13 +38,11 @@ Generate a new SSH keypair to securely log into your server. If you already have
 4. Type `ssh-keygen` into the terminal.
 5. Enter a file to save your SSH keypair, e.g., `C:/Users/{your_username}/.ssh/{your_folder_name}/id_rsa`
 6. Enter a secure passphrase to encrypt your SSH key on your Windows device. Choose a passphrase that is at least 12 characters long, with a mix of uppercase and lowercase letters, numbers, and special characters. This passphrase is crucial to protect your SSH key, and you MUST remember it!
-7. Close the terminal and confirm that the newly created keypair is saved into the new folder you created previously.
-8. Go to the following directory on your Windows PC: `C:/Users/{your_username}/.ssh/{your_folder_name}`
-9. Copy the file named `id_rsa` (not the one that says `id_rsa.pub`).
-10. Navigate to the following directory on your Windows PC: `C:/Users/{your_username}/.ssh`
-11. Paste a copy of your `id_rsa` file into this directory.
-12. Go back to the original directory: `C:/Users/{your_username}/.ssh/{your_folder_name}`
-13. Open the file named `id_rsa.pub` in Notepad and then minimize Notepad. You will come back to it later. You can close the File Explorer now.
+7. Close the terminal and confirm that the newly created keypair is saved into the new folder you created previously, then copy the file named 'id_rsa' (not the one that says `id_rsa.pub`).
+8. Navigate to the following directory on your Windows PC: `C:/Users/{your_username}/.ssh`
+9. Paste a copy of your `id_rsa` file into this directory.
+10. Go back to the original directory: `C:/Users/{your_username}/.ssh/{your_folder_name}`
+11. Open the file named `id_rsa.pub` in Notepad and then minimize Notepad. You will come back to it later. You can close the File Explorer now.
 
 # Guide starts here if you have completed the prerequisites 
 
