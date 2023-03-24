@@ -80,7 +80,7 @@ If you have been following the guide and have opted to use Hetzner as your serve
 
 2. Connect to your server using Cmder
 
-    Make sure to replace "`{IP}`" with the IP address of your server that you copied from the link above.
+    Make sure to replace `{IP}` with the IP address of your server that you copied from the link above.
     
     Launch: `Cmder.exe`
     
