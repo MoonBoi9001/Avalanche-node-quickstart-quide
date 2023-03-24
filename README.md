@@ -4,18 +4,18 @@ This guide is intended to help Windows users set up their Avalanche node on a Li
 
 ## Table of Contents
 
-1. [Support and Donations](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#support-and-donations)
-2. [Prerequisites](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#prerequisites)
-3. [Registering your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#registering-your-server)
-4. [Logging into your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#logging-into-your-server)
-5. [Beginning configuration of your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#beginning-configuration-of-your-server)
-6. [Download Go onto your configured server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#download-go-onto-your-configured-server)
-7. [Link your Github account with your server via SSH](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#link-your-github-account-with-your-server-via-ssh)
-8. [Clone and build the AvalancheGo Github](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#clone-and-build-the-avalanchego-github)
-9. [Backup your staking keys & Find your NodeID](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#backup-your-staking-keys--find-your-nodeid)
-10. [How to update, monitor and restore your node](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#how-to-update-monitor-and-restore-your-node)
-11. [Disclaimer](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#disclaimer)
-12. [License](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#license)
+1. [Support and Donations](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#support-and-donations)
+2. [Prerequisites](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#prerequisites)
+3. [Registering your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#registering-your-server)
+4. [Logging into your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#logging-into-your-server)
+5. [Beginning configuration of your server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#beginning-configuration-of-your-server)
+6. [Download Go onto your configured server](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#download-go-onto-your-configured-server)
+7. [Link your Github account with your server via SSH](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#link-your-github-account-with-your-server-via-ssh)
+8. [Clone and build the AvalancheGo Github](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#clone-and-build-the-avalanchego-github)
+9. [Backup your staking keys & Find your NodeID](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#backup-your-staking-keys--find-your-nodeid)
+10. [How to update, monitor and restore your node](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#how-to-update-monitor-and-restore-your-node)
+11. [Disclaimer](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#disclaimer)
+12. [License](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#license)
 
 ## Support and Donations
 
@@ -531,7 +531,7 @@ Press `New SSH key` and then paste the .pub file contents into GitHub, set an ap
     }' -H 'content-type:application/json;' 127.0.0.1:9650/ext/info
     ```
     
-    Now go back to the [node monitoring sites above](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md#step-1-how-to-monitor-your-node) (AllNodes/VScout are usually the fastest to update in my experience) and check your node has updated to the latest revision.
+    Now go back to the [node monitoring sites above](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/README.md#step-1-how-to-monitor-your-node) (AllNodes/VScout are usually the fastest to update in my experience) and check your node has updated to the latest revision.
 
 ### Step 3: How to restore your NodeID from backed up staking keys:
 
