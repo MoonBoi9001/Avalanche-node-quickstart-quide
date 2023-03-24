@@ -58,7 +58,7 @@ This guide gives an example walkthrough of how to register a server using popula
 #### 1. Purchase AX41-NVME on Hetzner
 
 Start by purchasing an AX41-NVME server on Hetzner in Germany or Finland, keeping in mind any one-time setup fees: [Hetzner AX41-NVME Configurator](https://www.hetzner.com/dedicated-rootserver/ax41-nvme/configurator#/)
-- Keep the option `Primary IPv4` checked and selected, as you will need it.
+- For the purposes of this guide we will keep the option `Primary IPv4` checked and selected, as we will use it.
 - Select the latest version of Ubuntu LTS (at the time of writing, this is Ubuntu 22.04.1 LTS (base)).
 - Optionally consider upgrading to ECC RAM near the bottom of the order page (not required).
 
