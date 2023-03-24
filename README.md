@@ -19,7 +19,7 @@ This guide is intended to help Windows users set up their Avalanche node on a Li
 
 ## Getting Started
 
-To get started, open the file `Guide for Windows PC.md` for the full walkthrough. Enjoy!
+To get started, open the file [`Guide for Windows PC.md`](https://github.com/MoonBoi9001/Avalanche-node-quickstart-quide/blob/main/Guide%20for%20Windows%20PC.md) for the full walkthrough. Enjoy!
 
 ## Support and Donations
 
