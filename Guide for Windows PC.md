@@ -100,7 +100,7 @@ Now that you have successfully logged into your server, you're ready to begin co
 
 Run: `sudo apt update && sudo apt upgrade`
 
-After entering, press `Y` (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process. You don't need to restart any more processes than recommended; simply press `Enter`.
+After entering, press `Y` when prompted (to continue) and may also need to press `Enter` on your keyboard to select okay a few times during the configuration process. You don't need to restart any more processes than recommended; simply press `Enter` when prompted.
 
 ### Step 2: Create a non-root user account
 
