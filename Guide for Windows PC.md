@@ -210,6 +210,8 @@ Press `Enter` to skip the SSH passphrase, this time only, instead you will use y
 
     Run: `sudo visudo`
     
+    Enter your user password
+    
 2. Add the following line to grant your user sudo privileges without a password:
 
     Add: `mainuser ALL=(ALL) NOPASSWD:ALL`
