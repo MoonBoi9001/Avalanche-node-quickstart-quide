@@ -570,3 +570,6 @@ Lets imagine your node has gone offline and you are now trying to restore your s
 #### https://discord.com/channels/578992315641626624/620633143002660874
 #### https://discord.com/channels/578992315641626624/757576823570825316
 
+## Support and Donations
+
+If you find this guide useful, please consider donating some AVAX to the following address: `0x721644dff35504c8F9A3c389d7C4dCE5D8afC4d2`. Any amount is greatly appreciated!
