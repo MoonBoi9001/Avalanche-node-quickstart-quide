@@ -197,7 +197,7 @@ Press `Enter` to skip the SSH passphrase, this time only, instead you will use y
 
     Run: `sudo apt install ufw`
 
-2. Allow port 2222 for SSH. If your IP is fixed, or you use a VPN, you can change this to `sudo ufw allow 2222 from {IP}`, which is more secure and limits the attack surface of a DDOS attack. It is strongly advised, although technically not strictly necessary. If your fixed IP changes in the future, you will have to update the firewall from your server dashboard, as you won't be able to login via SSH from an IP that has not been whitelisted.
+2. Allow port 2222 for SSH. If your IP is fixed, or you use a VPN, you can change this to `sudo ufw allow from {IP} to any port 2222`, which is more secure and limits the attack surface of a DDOS attack. It is strongly advised, although technically not strictly necessary. If your fixed IP changes in the future, you will have to update the firewall from your server dashboard, as you won't be able to login via SSH from an IP that has not been whitelisted.
 
     Run: `sudo ufw allow 2222`
 
